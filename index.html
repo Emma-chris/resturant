@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BiteModern | Fast Food, Reimagined</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f4f3f3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#5f6161",
+                        "outline-variant": "#e4beb4",
+                        "primary-container": "#ff5722",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-background": "#1a1c1c",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#862200",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-container-high": "#e9e8e8",
+                        "on-error-container": "#93000a",
+                        "background": "#faf9f9",
+                        "surface-tint": "#b02f00",
+                        "secondary-fixed": "#e2e2e2",
+                        "primary-fixed": "#ffdbd1",
+                        "inverse-surface": "#2f3131",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-primary-container": "#541200",
+                        "secondary-container": "#dcdddd",
+                        "surface": "#faf9f9",
+                        "on-tertiary-container": "#fffcfb",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#5c5c5c",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#757474",
+                        "inverse-on-surface": "#f1f0f0",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-surface-variant": "#5b4039",
+                        "surface-dim": "#dadada",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e3e2e2",
+                        "outline": "#907067",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-primary-fixed": "#3b0900",
+                        "surface-container-highest": "#e3e2e2",
+                        "surface-container": "#efeeed",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "secondary": "#5d5f5f",
+                        "on-surface": "#1a1c1c",
+                        "primary": "#b02f00",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#ffb5a0",
+                        "surface-bright": "#faf9f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "stack-md": "24px",
+                        "stack-lg": "40px",
+                        "gutter": "16px",
+                        "stack-sm": "12px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(26, 28, 28, 0.4), rgba(26, 28, 28, 0.1)), url('https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+    <!-- TopNavBar Navigation Shell -->
+    <header
+        class="bg-surface/80 dark:bg-surface/80 backdrop-blur-md font-label-lg text-label-lg docked full-width top-0 sticky shadow-sm dark:shadow-none flex justify-between items-center px-margin-mobile md:px-stack-lg py-4 w-full z-50">
+        <div class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">
+            <a href="index.html">BiteModern</a>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+            <a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary transition-colors"
+                href="menuDetails.html">Menu</a>
+            <a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors"
+                href="#">About</a>
+            <a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors"
+                href="storeLocation.html">Locations</a>
+            <a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors"
+                href="order.html">Orders</a>
+            <a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors"
+                href="career.html">Careers</a>
+        </nav>
+        <div class="flex items-center gap-4">
+            <button
+                class="scale-95 active:scale-90 transition-transform bg-primary-container text-on-primary rounded-full px-6 py-2.5 font-label-lg hover:brightness-110 shadow-md">
+                Order Now
+            </button>
+            <button class="md:hidden text-on-surface">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-[85vh] flex items-center overflow-hidden">
+            <div class="absolute inset-0 hero-gradient z-0"
+                data-alt="A hyper-realistic, close-up shot of a signature gourmet burger with melting artisanal cheese, crisp lettuce, and heirloom tomatoes. The bun is perfectly toasted and glistening under warm, cinematic studio lighting. The background is a soft, out-of-focus modern bistro interior with a premium, minimalist atmosphere and amber-orange light leaks.">
+            </div>
+            <div class="container mx-auto px-margin-mobile md:px-stack-lg relative z-10">
+                <div class="max-w-2xl animate-fade-in-up">
+                    <h1
+                        class="font-display-lg text-display-lg md:text-[64px] text-white leading-tight mb-4 drop-shadow-lg">
+                        Fast Food, <br /><span class="text-primary-container">Reimagined.</span>
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-white/90 mb-8 max-w-lg drop-shadow-sm">
+                        Experience the perfect collision of culinary innovation and quick-service speed. We source
+                        premium local ingredients to craft a menu that elevates every bite.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button
+                            class="bg-primary-container text-on-primary font-label-lg text-lg px-10 py-4 rounded-full shadow-xl hover:scale-105 active:scale-95 transition-all">
+                            Order Now
+                        </button>
+                        <button
+                            class="bg-white/10 backdrop-blur-md border border-white/20 text-white font-label-lg text-lg px-10 py-4 rounded-full hover:bg-white/20 transition-all">
+                            Explore Menu
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Signature Items Grid -->
+        <section class="py-stack-lg bg-surface">
+            <div class="container mx-auto px-margin-mobile md:px-stack-lg">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                    <div>
+                        <span class="text-primary font-label-lg uppercase tracking-widest mb-2 block">Our
+                            Favorites</span>
+                        <h2 class="font-headline-lg text-headline-lg">Signature Bites</h2>
+                    </div>
+                    <a class="text-primary font-label-lg hover:underline flex items-center gap-2" href="#">
+                        View Full Menu <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                    <!-- Item 1 -->
+                    <div
+                        class="group bg-surface-container-lowest rounded-[24px] overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <img alt="The Classic Smash"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                src="https://lh3.googleusercontent.com/aida/ADBb0uhClBTSTX8M50kefUi5anQv-r5Km3LUetCXhdPlz1Qq7oVSD7fM38JAnrISAyRh5PlRC4FUf_o0oirmf-V4bcH6Rd8KbnHUm_TDcllPHV49Jg04yS1bMXi_foVkjVePZsnLmh68hoIajnLyJZ9Zs6O7X6UWQj-q3MnaIRhyjsg6X4W_SD1XJ22rKT_Nr8ET0eGHdGQRtMD-s8pAS6oRNohmzZ1B3t-_OdTX-nZy69inVszeDh8yy9pmP4o" />
+                            <div class="absolute top-4 right-4">
+                                <span
+                                    class="bg-primary-container/90 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded-full">Bestseller</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline-md text-headline-md">The Classic Smash</h3>
+                                <span class="font-headline-md text-primary">$12.50</span>
+                            </div>
+                            <p class="text-secondary font-body-md mb-6">Double wagyu beef patties, aged cheddar,
+                                caramelized onions, and house-made truffle aioli on a brioche bun.</p>
+                            <button
+                                class="w-full py-3 bg-secondary-container text-on-secondary-container font-label-lg rounded-xl group-hover:bg-primary-container group-hover:text-white transition-colors flex justify-center items-center gap-2">
+                                <span class="material-symbols-outlined text-xl">add_shopping_cart</span>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div
+                        class="group bg-surface-container-lowest rounded-[24px] overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                data-alt="A gourmet portion of crispy truffle fries served in a stylish wire basket. The golden fries are tossed in fresh parsley, shaved parmesan, and visible specks of black truffle. The lighting is crisp and modern, highlighting the crunchy texture. The background is a clean white marble surface, reinforcing a premium, minimalist food aesthetic."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcNR1e5PxwApmiCeZTjLfeBGnEjH5uTA--c6ju7kwCTuVkTz87AF5DXI_lVEofF6VS49GLGPzL2KgfB1abHJqHior7EAuBxEQBqL6DD4WfOOwYkzmiIoNueDKj4MSQINmmRHcwR0jahnwuCP9vW2ymryvSr_xbVyi9-UWyvnYvN6WmCO-rsPxnZ_rLnunbU5Pojd79Wxd3q8Kds-QegflFDG6l7XKUkhFQF8_2Lqz7Fi3_qEn7acWJ5U1i37V54LrPxRex0UXxloAI" />
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline-md text-headline-md">Truffle Fries</h3>
+                                <span class="font-headline-md text-primary">$6.75</span>
+                            </div>
+                            <p class="text-secondary font-body-md mb-6">Hand-cut russet potatoes tossed in black truffle
+                                oil, parmesan reggiano, and fresh garden herbs.</p>
+                            <button
+                                class="w-full py-3 bg-secondary-container text-on-secondary-container font-label-lg rounded-xl group-hover:bg-primary-container group-hover:text-white transition-colors flex justify-center items-center gap-2">
+                                <span class="material-symbols-outlined text-xl">add_shopping_cart</span>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div
+                        class="group bg-surface-container-lowest rounded-[24px] overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                data-alt="An artisanal thick milkshake served in a vintage-inspired tall glass, topped with a swirl of rich whipped cream and a dark chocolate drizzle. The scene is set against a warm, sun-drenched minimalist background. The photography style is high-end lifestyle, focusing on the creamy texture and appetizing details with a shallow depth of field."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZpqdJiPmd6pasSC9uPSixsk4og7jy0XzTYlodXUW15lvQQRM55f_rOeaB5npsDJuOKD2mw2gka2pJcCOMBbg9f25WuChVSMCRbHIWVpogVgQfOykA4dXhKaftaOOm0RmpaVelkFU2xj4RRcgqW7HpPRkIjaS-JBDshikaudtPu0daHRkzz86X6vhJkSdeMaMHN6SX5ZPzf9BS8dQx7d1n8znBjbcGWmZFbLJiN1Jg-tmmDNBomwVpt7VgODrP1g5s4RHYyfm2-cQU" />
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline-md text-headline-md">Artisanal Shakes</h3>
+                                <span class="font-headline-md text-primary">$8.00</span>
+                            </div>
+                            <p class="text-secondary font-body-md mb-6">Ultra-thick, hand-spun milkshakes made with
+                                premium vanilla bean and local grass-fed dairy.</p>
+                            <button
+                                class="w-full py-3 bg-secondary-container text-on-secondary-container font-label-lg rounded-xl group-hover:bg-primary-container group-hover:text-white transition-colors flex justify-center items-center gap-2">
+                                <span class="material-symbols-outlined text-xl">add_shopping_cart</span>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Brand Story: The BiteModern Way -->
+        <section class="py-20 bg-surface-container-low overflow-hidden">
+            <div class="container mx-auto px-margin-mobile md:px-stack-lg">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="relative">
+                        <div class="aspect-square rounded-[40px] overflow-hidden shadow-2xl relative z-10">
+                            <img class="w-full h-full object-cover"
+                                data-alt="A clean, modern open kitchen scene showing professional chefs in minimal black uniforms carefully assembling high-end fast food. The lighting is soft and bright, emphasizing cleanliness and fresh ingredients. The interior design features light wood accents and white tiles, embodying a premium, contemporary fast-casual brand identity."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-DEcpJGrYr_H8qipIY9b8Njj9_aE7glbleFYP6wlJ2pV_vbRBg9V1l6QsSTuy1VKoLaRIqTGL5ABhyDVvQ5ylmxBiRc30BXex8SuTL5YhGXvhIVPVIjKIE9Mk3Ie5qRpDfVmul5oRKj6HQWMWuW6t8nuoRqBytjDc0UsLJeE0kUsJa90bUml3KZ4vna652xH4_qcQR__PUrYBx-Lalwsm4jru3t5y-gsoxmVydnStva5ygsRhCPN1VB23OEt_r_rALxu0P9FUfAH9" />
+                        </div>
+                        <div
+                            class="absolute -bottom-10 -right-10 w-64 h-64 bg-primary-container/10 rounded-full -z-10 blur-3xl">
+                        </div>
+                        <div
+                            class="absolute -top-10 -left-10 w-48 h-48 bg-secondary-container/20 rounded-full -z-10 blur-2xl">
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-primary font-label-lg uppercase tracking-widest mb-4 block">Our
+                            Philosophy</span>
+                        <h2 class="font-headline-lg text-headline-lg md:text-[42px] mb-6 leading-tight">The BiteModern
+                            Way</h2>
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-white">eco</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-headline-md text-lg mb-1">Ethical Sourcing</h4>
+                                    <p class="text-secondary font-body-md">We partner exclusively with local farmers and
+                                        suppliers who share our commitment to sustainability and quality.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-white">skillet</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-headline-md text-lg mb-1">Culinary Craft</h4>
+                                    <p class="text-secondary font-body-md">Every sauce, patty, and fry is prepared from
+                                        scratch daily. No shortcuts, just pure culinary focus.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-white">electric_bolt</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-headline-md text-lg mb-1">Modern Velocity</h4>
+                                    <p class="text-secondary font-body-md">High-end food shouldn't take an hour. We've
+                                        optimized every second of our process to get you gourmet meals in minutes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            class="mt-10 border-2 border-primary text-primary font-label-lg px-8 py-3 rounded-full hover:bg-primary hover:text-white transition-all">
+                            Learn More About Us
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Locations / Online Ordering CTA -->
+        <section class="py-stack-lg container mx-auto px-margin-mobile md:px-stack-lg">
+            <div
+                class="bg-inverse-surface rounded-[32px] p-8 md:p-16 relative overflow-hidden flex flex-col items-center text-center">
+                <div class="absolute inset-0 opacity-10 pointer-events-none"
+                    style="background-image: radial-gradient(#ffffff 1px, transparent 0); background-size: 40px 40px;">
+                </div>
+                <h2 class="font-headline-lg text-headline-lg md:text-[48px] text-white mb-6 relative z-10">Taste
+                    Modernity Near You</h2>
+                <p class="text-white/80 font-body-lg text-body-lg mb-10 max-w-xl relative z-10">
+                    With over 12 locations across the city and full online ordering integration, your next premium meal
+                    is just a few clicks away.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 relative z-10">
+                    <button
+                        class="bg-primary-container text-on-primary font-label-lg px-12 py-4 rounded-full shadow-lg hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
+                        <span class="material-symbols-outlined">shopping_bag</span>
+                        Order Online
+                    </button>
+                    <button
+                        class="bg-white text-on-background font-label-lg px-12 py-4 rounded-full shadow-lg hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
+                        <span class="material-symbols-outlined">location_on</span>
+                        Find a Store
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer Navigation Shell -->
+    <footer class="bg-surface-container-low dark:bg-surface-dim font-body-md text-body-md full-width mt-10">
+        <div
+            class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-stack-lg py-stack-lg w-full container mx-auto">
+            <div class="mb-8 md:mb-0 text-center md:text-left">
+                <div
+                    class="font-headline-md text-headline-md text-on-surface dark:text-on-secondary-fixed mb-2 font-bold">
+                    BiteModern</div>
+                <p class="text-on-secondary-container dark:text-on-secondary-fixed-variant opacity-80 max-w-xs">
+                    © 2024 BiteModern. All rights reserved. Premium Fast Food.
+                </p>
+            </div>
+            <div
+                class="flex flex-wrap justify-center gap-8 text-on-secondary-container dark:text-on-secondary-fixed-variant">
+                <a class="hover:underline text-primary transition-opacity opacity-80 hover:opacity-100" href="#">Privacy
+                    Policy</a>
+                <a class="hover:underline text-primary transition-opacity opacity-80 hover:opacity-100" href="#">Terms
+                    of Service</a>
+                <a class="hover:underline text-primary transition-opacity opacity-80 hover:opacity-100"
+                    href="#">Sustainability</a>
+                <a class="hover:underline text-primary transition-opacity opacity-80 hover:opacity-100"
+                    href="#">Contact</a>
+            </div>
+            <div class="mt-8 md:mt-0 flex gap-4">
+                <a class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center hover:bg-primary-container hover:text-white transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]">public</span>
+                </a>
+                <a class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center hover:bg-primary-container hover:text-white transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]">chat</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- Floating Action Button for Cart (suppressed on some pages as per logic, but enabled here for Home) -->
+    <button
+        class="fixed bottom-8 right-8 w-16 h-16 bg-primary-container text-white rounded-full shadow-2xl flex items-center justify-center z-50 hover:scale-110 active:scale-90 transition-transform group">
+        <span class="material-symbols-outlined text-[28px]"
+            style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+        <span
+            class="absolute -top-1 -right-1 bg-on-background text-white text-[10px] w-6 h-6 rounded-full flex items-center justify-center font-bold">0</span>
+    </button>
+    <script>
+        // Simple entrance animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100');
+                        entry.target.classList.remove('translate-y-10', 'opacity-0');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section > div').forEach(el => {
+                el.classList.add('transition-all', 'duration-1000', 'translate-y-10', 'opacity-0');
+                observer.observe(el);
+            });
+        });
+
+        // Sticky Navbar logic for subtle background change
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('header');
+            if (window.scrollY > 50) {
+                nav.classList.add('glass-nav', 'shadow-md');
+            } else {
+                nav.classList.remove('glass-nav', 'shadow-md');
+            }
+        });
+    </script>
+</body>
+
+</html>

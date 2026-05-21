@@ -1,0 +1,342 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#faf9f9",
+                        "surface-dim": "#dadada",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e3e2e2",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "outline-variant": "#e4beb4",
+                        "on-tertiary-container": "#fffcfb",
+                        "tertiary-fixed": "#e5e2e1",
+                        "secondary": "#5d5f5f",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "primary-container": "#ff5722",
+                        "surface-container-low": "#f4f3f3",
+                        "secondary-container": "#dcdddd",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-primary-fixed-variant": "#862200",
+                        "surface-container": "#efeeed",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "inverse-on-surface": "#f1f0f0",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-high": "#e9e8e8",
+                        "surface": "#faf9f9",
+                        "tertiary": "#5c5c5c",
+                        "surface-container-highest": "#e3e2e2",
+                        "primary-fixed": "#ffdbd1",
+                        "on-secondary-container": "#5f6161",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-background": "#1a1c1c",
+                        "primary": "#b02f00",
+                        "inverse-primary": "#ffb5a0",
+                        "surface-bright": "#faf9f9",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#b02f00",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-container": "#541200",
+                        "on-surface-variant": "#5b4039",
+                        "tertiary-container": "#757474",
+                        "outline": "#907067",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#3b0900",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "secondary-fixed-dim": "#c6c6c7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "40px",
+                        "gutter": "16px",
+                        "stack-md": "24px",
+                        "stack-sm": "12px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            background-color: rgba(250, 249, 249, 0.8);
+        }
+        .offer-card-hover {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+        .offer-card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(176, 47, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-nav shadow-sm">
+<nav class="flex items-center justify-between px-margin-mobile py-4 max-w-7xl mx-auto w-full z-50">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim tracking-tight">
+                BiteModern
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary transition-colors font-label-lg text-label-lg" href="#">Menu</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-1 font-label-lg text-label-lg" href="#">Orders</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary transition-colors font-label-lg text-label-lg" href="#">Bag</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary transition-colors font-label-lg text-label-lg" href="#">Profile</a>
+</div>
+<div class="flex items-center space-x-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="bg-surface-container border-none rounded-full py-2 pl-10 pr-4 text-body-md font-body-md focus:ring-2 focus:ring-primary w-48 md:w-64 transition-all" placeholder="Search rewards..." type="text">
+</div>
+<button class="md:hidden text-on-background">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="pt-24 pb-12">
+<!-- Hero Section: Limited Time Special -->
+<section class="px-margin-mobile mb-stack-lg max-w-7xl mx-auto">
+<div class="relative overflow-hidden rounded-3xl bg-on-primary-container h-[500px] flex items-center group">
+<div class="absolute inset-0 z-0">
+<img alt="Special Burger" class="w-full h-full object-cover opacity-60 transition-transform duration-1000 group-hover:scale-105" data-alt="A cinematic, ultra-high-definition close-up shot of a gourmet 'Signature Smoked' burger with melting orange cheddar, crisp arugula, and artisanal brioche bun. The lighting is dramatic and warm, emphasizing the textures of the seared beef and fresh vegetables. The background is a blurred, sophisticated dark restaurant interior with amber lighting accents, creating a premium fast-food aesthetic consistent with a high-end minimalist brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwPKx_TiJNqwfEcgSOyolrpipi9rTMoC-xzv6cR31iV-1woUY7W1feEd9_cy6B75hy1uuYxZzsfLU5RCCfDLCG6Gc2HvhNe7lxuGmYHj2yPTdWLCRO_JnxEyT7gSfa-1173_uIBPpSn0Sf-wdx1aCp7D0-ZxaW5aDnwHKTuevW5YLETZcEC3HaeftnJFlX-0E7chkSMIQ_qlsfcD68aG249_lRDVV2JT5ZaIyYe4Ys-74ccqj7wMdvrKG161OsQbhLcPqMrPqt6Lv5">
+</div>
+<div class="relative z-10 p-8 md:p-16 max-w-2xl text-white">
+<span class="inline-block px-4 py-1 rounded-full bg-primary-container text-white font-label-lg text-label-lg mb-6 tracking-wide">LIMITED TIME SPECIAL</span>
+<h1 class="font-display-lg text-display-lg md:text-[56px] leading-tight mb-6">The Midnight Truffle Smash</h1>
+<p class="font-body-lg text-body-lg mb-8 opacity-90 max-w-md">Indulge in our aged wagyu blend, black truffle aioli, and caramelized balsamic onions on a toasted pretzel bun. Exclusive for members this week.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-container hover:bg-primary text-white font-label-lg text-label-lg px-8 py-4 rounded-full shadow-lg transition-all active:scale-95">Claim Offer</button>
+<button class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 font-label-lg text-label-lg px-8 py-4 rounded-full transition-all active:scale-95">Learn More</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Member Rewards Section -->
+<section class="px-margin-mobile mb-stack-lg max-w-7xl mx-auto">
+<div class="bg-surface-container-low rounded-3xl p-8 md:p-12 border border-surface-variant flex flex-col md:flex-row items-center justify-between">
+<div class="mb-8 md:mb-0">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Welcome back, Alex.</h2>
+<p class="font-body-md text-body-md text-secondary">You are 250 points away from your next free meal.</p>
+<div class="mt-6 flex items-center gap-4">
+<div class="flex -space-x-2">
+<span class="w-10 h-10 rounded-full border-2 border-white bg-primary-fixed flex items-center justify-center font-bold text-on-primary-fixed">S</span>
+<span class="w-10 h-10 rounded-full border-2 border-white bg-surface-dim flex items-center justify-center text-outline">G</span>
+<span class="w-10 h-10 rounded-full border-2 border-white bg-surface-dim flex items-center justify-center text-outline">P</span>
+</div>
+<span class="font-label-lg text-label-lg text-primary">Silver Tier Member</span>
+</div>
+</div>
+<div class="w-full md:w-72 bg-white rounded-2xl p-6 shadow-sm border border-surface-variant">
+<div class="flex justify-between items-end mb-4">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Balance</span>
+<span class="font-headline-md text-headline-md text-primary">1,250</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full mb-2">
+<div class="bg-primary h-full rounded-full" style="width: 75%;"></div>
+</div>
+<p class="text-right font-label-sm text-label-sm text-outline">Points till Gold</p>
+<button class="w-full mt-6 py-3 rounded-xl border border-primary text-primary font-label-lg text-label-lg hover:bg-primary-fixed transition-colors">Redeem Points</button>
+</div>
+</div>
+</section>
+<!-- Daily Deals Grid (Bento Style) -->
+<section class="px-margin-mobile mb-stack-lg max-w-7xl mx-auto">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Daily Deals</h2>
+<button class="text-primary font-label-lg text-label-lg flex items-center gap-2 hover:underline">
+                    View Schedule <span class="material-symbols-outlined text-base">calendar_today</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Large Card -->
+<div class="md:col-span-2 relative h-80 rounded-3xl overflow-hidden offer-card-hover group">
+<img alt="BOGO Tuesdays" class="absolute inset-0 w-full h-full object-cover" data-alt="High-contrast, vibrant food photography of two identical premium burgers placed side-by-side on a rustic paper wrap. The scene is bright and airy with soft natural light. The background is a clean white table with minimalist ceramic plates. The image conveys a 'Buy One Get One' message through symmetrical composition and professional lighting typical of modern lifestyle fast-food brands." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFibTNapDf8HmKu0ejJj5_SzVnER_7USQzRoUQWvcEBUDhXxg_F-wuCdIQ4Q78yCdsTUrpkYRciv5mLgKhRVi2oejENnU-d0FbvtuHrSVps3aYKvxnAy8TOSKmjD0BLER_QDmrN_UflWK7WLAlL2-29Q1nCsuxHKQ0JRNswkADvpU0z9ijiZPI8HFabGBwDFN3DoIMirX8GyyPzWh3TE1nD-Z0UfL1YZTZueXr6yum4BkGV2UVp3MbhuQhA_6ZphfLu09x1tUkXaJD">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-8 flex flex-col justify-end">
+<h3 class="font-headline-lg text-white mb-2">BOGO Tuesdays</h3>
+<p class="font-body-md text-white/80 max-w-xs mb-4">Buy any signature burger and get the second one on us. All day, every Tuesday.</p>
+<button class="w-fit bg-primary-container text-white px-6 py-2 rounded-full font-label-lg text-label-lg">Apply Now</button>
+</div>
+<div class="absolute top-6 right-6 bg-white rounded-full px-4 py-1 font-label-lg text-primary shadow-lg">Weekly</div>
+</div>
+<!-- Small Card 1 -->
+<div class="bg-surface-container-high rounded-3xl p-8 offer-card-hover border border-surface-variant flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-4">delivery_dining</span>
+<h3 class="font-headline-md text-on-surface mb-2">Free Delivery</h3>
+<p class="font-body-md text-secondary">On all orders over $30 within the metropolitan area.</p>
+</div>
+<div class="mt-8">
+<span class="font-label-sm text-outline uppercase tracking-widest block mb-4">Code: BITEFREE</span>
+<button class="w-full bg-white text-on-surface border border-surface-variant py-3 rounded-xl font-label-lg text-label-lg hover:bg-surface-container transition-colors">Copy Code</button>
+</div>
+</div>
+<!-- Small Card 2 -->
+<div class="bg-primary-fixed rounded-3xl p-8 offer-card-hover flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-4">coffee</span>
+<h3 class="font-headline-md text-on-primary-fixed mb-2">Morning Boost</h3>
+<p class="font-body-md text-on-primary-fixed-variant">Free medium cold brew with any breakfast combo purchase before 10 AM.</p>
+</div>
+<button class="mt-8 w-full bg-primary text-white py-3 rounded-xl font-label-lg text-label-lg shadow-sm">Claim Now</button>
+</div>
+<!-- Mid Card -->
+<div class="md:col-span-2 bg-surface-container-highest rounded-3xl p-8 offer-card-hover border border-surface-variant flex flex-col md:flex-row gap-8 items-center">
+<div class="flex-1">
+<span class="bg-on-surface-variant text-white px-3 py-1 rounded-md font-label-sm text-[10px] uppercase tracking-tighter mb-4 inline-block">Exclusive</span>
+<h3 class="font-headline-lg text-on-surface mb-4">Student Discount</h3>
+<p class="font-body-md text-secondary mb-6">Verified students get 15% off their entire order. Simply present your digital ID in-store or verify via our app portal.</p>
+<button class="text-primary font-label-lg text-label-lg flex items-center gap-2">Verify Status <span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+<div class="w-full md:w-1/3 aspect-video md:aspect-square rounded-2xl overflow-hidden shadow-md">
+<img alt="Student Meal" class="w-full h-full object-cover" data-alt="A stylish, top-down flat lay of a minimalist student meal: a clean tray with a single cheeseburger, small fries in a designer box, and a chilled soft drink. The setting is a brightly lit, modern cafeteria with light wood textures and soft shadows. The overall aesthetic is clean, youthful, and high-end, focusing on the quality and presentation of the simple meal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABRrYvbwxmOGgwT-M95xE1n4ApnbVjGhPm2wFJQg1P7C5j--l1OIyv3Nzfmz6vRmLz9eDHZPolL9FicxXcDk1t0e5aY1cxjuDBgBhTi50qN3LGdOAWY2nm_DmXFywiB2g_fTxG-F32AvEqio5B07Y9qcWNnXVcwICZjpw6cgYjiP77kRvQ1KJDCnaKBXdSYPdrItHKK8G82QvG9z0o3z0dUc1hvZK-nz2YBPDXadwoFFUgoXMLzcCGrnDN5gNjMvZCrpsZ4NGyszwO">
+</div>
+</div>
+</div>
+</section>
+<!-- Bundle & Save Section -->
+<section class="px-margin-mobile mb-stack-lg max-w-7xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">Bundle &amp; Save</h2>
+<div class="flex overflow-x-auto gap-gutter pb-8 no-scrollbar -mx-margin-mobile px-margin-mobile snap-x">
+<!-- Combo 1 -->
+<div class="min-w-[300px] md:min-w-[380px] bg-white rounded-3xl overflow-hidden border border-surface-variant snap-start group shadow-sm">
+<div class="h-48 relative">
+<img alt="Family Pack" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A premium 'Family Bundle' feast displayed on a minimalist white table. The spread includes four gourmet burgers, two large portions of golden fries, a large artisanal salad, and four craft sodas. The lighting is soft and warm, creating an inviting, communal atmosphere. The composition is balanced and elegant, avoiding the typical cluttered look of fast food for a more upscale, lifestyle-focused presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDUt4c5UmeDqv44ltHn8aeEZgauEciSB6oz6Jw9ueC-EOqdtmExbdVWJhfSPB9Y0DVvHBApcXuHigS-UFIzmI3kgLRjCLy4BbJUQTnyL0wNvIWepaG4K-7ttzpZsI5hFa158MQQb-Yaq-8_wS3nH-dITGd_n6zNFF1YGM8I6MN_VfvIwoqfITHqYsNVmCUt9SIxxB0VlwchG2PkCLcp2xBw_fBcLuu5ZPda9URQIwhw2w3kUGjpyZ6kM0S9HY6MwIkCZPEgQAfnWGC">
+<div class="absolute top-4 left-4 bg-primary text-white px-4 py-1 rounded-full font-label-sm text-label-sm shadow-md">Save $12</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-md text-on-surface mb-2">Modern Family Pack</h4>
+<p class="font-body-md text-secondary mb-6 h-12">Feeds 4. Choice of 4 Burgers, 2 Large Sides, and 4 Signature Drinks.</p>
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-primary">$48.00</span>
+<button class="bg-surface-container text-on-surface px-4 py-2 rounded-full font-label-lg text-label-lg hover:bg-secondary-container transition-colors">Add to Bag</button>
+</div>
+</div>
+</div>
+<!-- Combo 2 -->
+<div class="min-w-[300px] md:min-w-[380px] bg-white rounded-3xl overflow-hidden border border-surface-variant snap-start group shadow-sm">
+<div class="h-48 relative">
+<img alt="Date Night" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A 'Date Night Bundle' featuring two elegant burgers, one large shared truffle fry, and two artisanal shakes. The scene is lit with warm, intimate twilight lighting in a modern patio setting. The focus is on the sophisticated packaging and the high-quality ingredients, presented with a clean, minimalist photographic style that emphasizes romance and premium quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoQ3d-0fOtJ5SOEfcqm9MDY5DL8OZggMrLASanQiR9E4N2UsB2CdZ2yGDmUplAAzElut8-v8U3dTpErxTpzf0fod16yLjpPMfhP3X9F7XIBwom62VsPwQEkstwT8GNowlOm4mkpmgDiGZ1jpDiGV-k3Xo0VS0Cfrvs0vDRPi6LteobS-qndpddTS_ztt0LB3mHzp2bAcgASITglath2QLAgxl4IadWfD_XFo0Lb9aT1AzXbaVZQfaI1qtUhrQL7Wvo5FVGFl8oe3MA">
+<div class="absolute top-4 left-4 bg-primary text-white px-4 py-1 rounded-full font-label-sm text-label-sm shadow-md">Save $8</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-md text-on-surface mb-2">Urban Date Night</h4>
+<p class="font-body-md text-secondary mb-6 h-12">Perfect for 2. Choice of 2 Sandwiches, Shared Large Side, and 2 Dessert Shakes.</p>
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-primary">$32.00</span>
+<button class="bg-surface-container text-on-surface px-4 py-2 rounded-full font-label-lg text-label-lg hover:bg-secondary-container transition-colors">Add to Bag</button>
+</div>
+</div>
+</div>
+<!-- Combo 3 -->
+<div class="min-w-[300px] md:min-w-[380px] bg-white rounded-3xl overflow-hidden border border-surface-variant snap-start group shadow-sm">
+<div class="h-48 relative">
+<img alt="Office Lunch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An 'Office Lunch Bundle' showing six neatly packed gourmet sliders, three portions of sweet potato fries, and six sparkling water bottles. The scene is a bright, modern office breakroom with a clean marble countertop. The lighting is crisp and professional, highlighting the fresh, healthy aspects of the meal and its high-end minimalist packaging." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhQcgiSbRoUEoUBStEtGwBSEekW7W1Nxbxj1wXTodIOkanqtxQ_8mw7BSng_sGhmZLSS2tpTXrLRWmKNVYow1KXfcyj9NbYthcmjhlnwgRBpT8wiKEayYZ6Ifspfn2AhbmjdzwXKYSBOhPi98BgktqBbTFUgvjWv_Aenr9JhAOUa5bqhwCyBEHRJ4BnLqjaioFlABM3uhcmQZ8pUKQFxvywo_C1oEDmSXjL0KgTxEz7e1qmhDqA2aw9AgIELqipZnUoT4tNBoKZeD7">
+<div class="absolute top-4 left-4 bg-primary text-white px-4 py-1 rounded-full font-label-sm text-label-sm shadow-md">Save $25</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-md text-on-surface mb-2">Office Power Lunch</h4>
+<p class="font-body-md text-secondary mb-6 h-12">Feeds 6. 12 Sliders, 3 Shareable Sides, and 6 Beverages.</p>
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-primary">$75.00</span>
+<button class="bg-surface-container text-on-surface px-4 py-2 rounded-full font-label-lg text-label-lg hover:bg-secondary-container transition-colors">Add to Bag</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest border-t border-surface-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile py-stack-md max-w-7xl mx-auto w-full">
+<div class="mb-8 md:mb-0">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim mb-2">BiteModern</div>
+<p class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim max-w-xs">© 2024 BiteModern. High-end fast-food reimagined.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6 md:gap-12">
+<div class="flex flex-col gap-2">
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors focus:underline underline-offset-4" href="#">Support</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors focus:underline underline-offset-4" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors focus:underline underline-offset-4" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors focus:underline underline-offset-4" href="#">Locations</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors focus:underline underline-offset-4" href="#">Careers</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- FAB for Cart -->
+<div class="fixed bottom-8 right-8 z-40">
+<button class="bg-primary-container text-white w-16 h-16 rounded-full shadow-[0_8px_30px_rgba(255,87,34,0.3)] flex items-center justify-center group active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-12 transition-transform">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-on-background text-white text-[10px] w-6 h-6 rounded-full flex items-center justify-center font-bold border-2 border-background">3</span>
+</button>
+</div>
+<script>
+        // Simple horizontal scroll interaction for bundles
+        const scrollContainer = document.querySelector('.no-scrollbar');
+        if (scrollContainer) {
+            scrollContainer.addEventListener('wheel', (evt) => {
+                evt.preventDefault();
+                scrollContainer.scrollLeft += evt.deltaY;
+            });
+        }
+
+        // Add a subtle parallax effect to hero image
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('.group img');
+            if (heroImage) {
+                heroImage.style.transform = `scale(1.05) translateY(${scrolled * 0.1}px)`;
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Saved Addresses - BiteModern</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#faf9f9",
+                    "on-secondary-fixed-variant": "#454747",
+                    "primary-container": "#ff5722",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "inverse-primary": "#ffb5a0",
+                    "outline-variant": "#e4beb4",
+                    "surface-container-low": "#f4f3f3",
+                    "primary-fixed-dim": "#ffb5a0",
+                    "secondary-fixed": "#e2e2e2",
+                    "surface-container-highest": "#e3e2e2",
+                    "on-tertiary-container": "#fffcfb",
+                    "on-surface-variant": "#5b4039",
+                    "on-secondary-container": "#5f6161",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#efeeed",
+                    "tertiary-container": "#757474",
+                    "surface": "#faf9f9",
+                    "on-primary-fixed": "#3b0900",
+                    "secondary-container": "#dcdddd",
+                    "outline": "#907067",
+                    "surface-container-high": "#e9e8e8",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#e5e2e1",
+                    "surface-dim": "#dadada",
+                    "primary-fixed": "#ffdbd1",
+                    "on-error-container": "#93000a",
+                    "on-background": "#1a1c1c",
+                    "inverse-surface": "#2f3131",
+                    "primary": "#b02f00",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e3e2e2",
+                    "tertiary": "#5c5c5c",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-primary-fixed-variant": "#862200",
+                    "on-primary-container": "#541200",
+                    "inverse-on-surface": "#f1f0f0",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#b02f00",
+                    "on-error": "#ffffff",
+                    "on-surface": "#1a1c1c",
+                    "background": "#faf9f9",
+                    "secondary": "#5d5f5f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "gutter": "16px",
+                    "stack-md": "24px",
+                    "stack-lg": "40px",
+                    "base": "8px",
+                    "stack-sm": "12px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .premium-shadow {
+            box-shadow: 0 4px 20px -2px rgba(176, 47, 0, 0.06);
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar Component -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm shadow-primary/5">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-stack-lg max-w-7xl mx-auto">
+<div class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-fixed tracking-tight">
+                BiteModern
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary transition-colors font-label-lg text-label-lg tracking-wide" href="#">Menu</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary transition-colors font-label-lg text-label-lg tracking-wide" href="#">Orders</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary transition-colors font-label-lg text-label-lg tracking-wide" href="#">Bag</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary font-label-lg text-label-lg tracking-wide" href="#">Profile</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="material-symbols-outlined text-on-surface hover:opacity-80 transition-opacity active:scale-95 duration-150" data-icon="shopping_bag">shopping_bag</button>
+<button class="material-symbols-outlined text-on-surface hover:opacity-80 transition-opacity active:scale-95 duration-150" data-icon="account_circle">account_circle</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-stack-lg max-w-7xl mx-auto px-margin-mobile md:px-stack-lg min-h-screen">
+<div class="flex flex-col md:flex-row gap-stack-lg">
+<!-- Sidebar Navigation -->
+<aside class="w-full md:w-64 flex-shrink-0">
+<div class="space-y-2">
+<h2 class="font-headline-md text-headline-md mb-6 px-4">Account</h2>
+<nav class="flex flex-col space-y-1">
+<a class="flex items-center space-x-3 px-4 py-3 rounded-xl text-secondary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-lg text-label-lg">Personal Info</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-xl text-secondary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-lg text-label-lg">Order History</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-xl bg-primary-container/10 text-primary font-bold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="font-label-lg text-label-lg">Saved Addresses</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-xl text-secondary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-lg text-label-lg">Payment Methods</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-xl text-secondary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-label-lg text-label-lg">Notifications</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Main Content Area -->
+<section class="flex-1">
+<div class="flex justify-between items-center mb-8">
+<h1 class="font-headline-lg text-headline-lg">Saved Addresses</h1>
+<button class="bg-primary-container text-on-primary px-6 py-3 rounded-full font-label-lg text-label-lg flex items-center space-x-2 premium-shadow hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined">add</span>
+<span>Add New Address</span>
+</button>
+</div>
+<!-- Address Cards Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Home Address -->
+<div class="bg-surface-container-low p-6 rounded-[24px] premium-shadow border border-outline-variant/20 group hover:border-primary/30 transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-white p-3 rounded-2xl">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<div class="flex space-x-2">
+<button class="p-2 text-secondary hover:text-primary hover:bg-white rounded-lg transition-all active:scale-90" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 text-secondary hover:text-error hover:bg-white rounded-lg transition-all active:scale-90" title="Delete">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-1">Home</h3>
+<p class="text-on-surface-variant font-body-md text-body-md leading-relaxed">
+                            1234 Amber Lane, Sunset District<br/>
+                            San Francisco, CA 94122
+                        </p>
+<div class="mt-6 flex items-center text-primary font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-[18px] mr-2">check_circle</span>
+                            Default Address
+                        </div>
+</div>
+<!-- Office Address -->
+<div class="bg-surface-container-low p-6 rounded-[24px] premium-shadow border border-outline-variant/20 group hover:border-primary/30 transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-white p-3 rounded-2xl">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">work</span>
+</div>
+<div class="flex space-x-2">
+<button class="p-2 text-secondary hover:text-primary hover:bg-white rounded-lg transition-all active:scale-90" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 text-secondary hover:text-error hover:bg-white rounded-lg transition-all active:scale-90" title="Delete">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-1">Office</h3>
+<p class="text-on-surface-variant font-body-md text-body-md leading-relaxed">
+                            88 Market Street, Financial Hub<br/>
+                            Suite 400, San Francisco, CA 94105
+                        </p>
+<button class="mt-6 text-secondary font-label-lg text-label-lg hover:text-primary transition-colors">
+                            Set as Default
+                        </button>
+</div>
+</div>
+<!-- Empty State Suggestion / Add Prompt -->
+<div class="mt-stack-lg p-stack-md rounded-[24px] border-2 border-dashed border-outline-variant flex flex-col items-center justify-center text-center">
+<div class="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-outline text-3xl">add_location_alt</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface-variant">Expecting a guest?</p>
+<p class="font-body-md text-body-md text-secondary mb-6 max-w-sm">Save a new address to speed up your next checkout and ensure hot, fresh deliveries.</p>
+</div>
+<!-- Lifestyle Banner -->
+<div class="mt-stack-lg relative overflow-hidden rounded-[32px] min-h-[300px] flex items-center">
+<img alt="Delivery convenience" class="absolute inset-0 w-full h-full object-cover" data-alt="A cinematic, high-fidelity photograph of a sleek electric delivery scooter parked on a clean, modern city street during the golden hour. The warm amber lighting of the sunset illuminates the scene, creating long, soft shadows and a premium lifestyle atmosphere. In the background, modern architecture with glass facades reflects the orange sky. The focus is sharp on the minimalist delivery box attached to the scooter, conveying a sense of efficiency, speed, and high-end urban service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdFTDErQ1ikdhFvvR-zQ4K4R4Y1wDwJYY9-hS7_z3CGRADwY_S27Zm1HYvshThWxh6piGwqQhjOyIqQYgf_Qeb2BokJmg5q9IZodJzfbrUZ4vQGchNwSUy_lp1f5wfHTTRQN1dRrUds7ER0JIPK81N28LiVX2JPBNd5j2vPkhHFrxYlvgp7T5zzVB0cdjHLHTkbusqUJ-T15P3KsAwrqVmJ4iwYF6RFxEw2giwAz7rdTW7Jl3hP34Pz-MIbud8V888-zvEc3-CTFBG"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+<div class="relative z-10 p-stack-lg max-w-lg text-white">
+<h2 class="font-headline-lg text-headline-lg mb-4">Freshness delivered to your doorstep.</h2>
+<p class="font-body-lg text-body-lg mb-8 opacity-90">Experience the peak of convenience with BiteModern's ultra-fast delivery network. Save multiple locations for seamless service anywhere you are.</p>
+<button class="bg-white text-primary px-8 py-4 rounded-full font-label-lg text-label-lg hover:bg-primary-fixed transition-all active:scale-95">
+                            Browse Nearest Kitchens
+                        </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest w-full py-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md px-margin-mobile md:px-stack-lg max-w-7xl mx-auto">
+<div class="space-y-4">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">BiteModern</div>
+<p class="text-secondary dark:text-secondary-fixed-dim font-label-sm text-label-sm max-w-xs leading-relaxed">
+                    Elevating the fast-food experience through premium design and culinary excellence.
+                </p>
+<div class="text-secondary dark:text-secondary-fixed-dim font-label-sm text-label-sm">
+                    © 2024 BiteModern. All rights reserved.
+                </div>
+</div>
+<div class="flex flex-wrap gap-x-8 gap-y-4 md:justify-end items-start">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface transition-all hover:underline font-label-sm text-label-sm" href="#">Legal</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface transition-all hover:underline font-label-sm text-label-sm" href="#">Privacy Policy</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface transition-all hover:underline font-label-sm text-label-sm" href="#">Contact Support</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface transition-all hover:underline font-label-sm text-label-sm" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                button.style.transform = 'scale(1.02)';
+            });
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'scale(1)';
+            });
+        });
+
+        // Simple feedback for address actions
+        function notify(message) {
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-8 right-8 bg-inverse-surface text-inverse-on-surface px-6 py-3 rounded-xl premium-shadow z-[100] transition-all duration-300 opacity-0 translate-y-4';
+            toast.innerText = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.remove('opacity-0', 'translate-y-4');
+            }, 10);
+            
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-4');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        document.querySelectorAll('[title="Delete"]').forEach(btn => {
+            btn.onclick = () => notify('Address deletion request received');
+        });
+        document.querySelectorAll('[title="Edit"]').forEach(btn => {
+            btn.onclick = () => notify('Address editor opening...');
+        });
+    </script>
+</body></html>

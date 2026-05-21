@@ -1,0 +1,336 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        /* Custom Toggle Switch Styles */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #ff5722;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #ff5722;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#907067",
+                      "inverse-on-surface": "#f1f0f0",
+                      "secondary-fixed": "#e2e2e2",
+                      "surface-dim": "#dadada",
+                      "on-primary-fixed-variant": "#862200",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed": "#3b0900",
+                      "surface-container-highest": "#e3e2e2",
+                      "tertiary-fixed": "#e5e2e1",
+                      "inverse-surface": "#2f3131",
+                      "on-tertiary-fixed": "#1b1c1c",
+                      "on-secondary-container": "#5f6161",
+                      "outline-variant": "#e4beb4",
+                      "surface-container-low": "#f4f3f3",
+                      "primary-container": "#ff5722",
+                      "on-primary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-background": "#1a1c1c",
+                      "secondary": "#5d5f5f",
+                      "primary-fixed": "#ffdbd1",
+                      "secondary-container": "#dcdddd",
+                      "primary": "#b02f00",
+                      "on-tertiary-fixed-variant": "#474746",
+                      "on-surface": "#1a1c1c",
+                      "tertiary": "#5c5c5c",
+                      "on-surface-variant": "#5b4039",
+                      "on-secondary-fixed-variant": "#454747",
+                      "on-tertiary": "#ffffff",
+                      "background": "#faf9f9",
+                      "surface-tint": "#b02f00",
+                      "surface-container": "#efeeed",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "on-tertiary-container": "#fffcfb",
+                      "surface-variant": "#e3e2e2",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "surface-container-high": "#e9e8e8",
+                      "surface-bright": "#faf9f9",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed-dim": "#ffb5a0",
+                      "on-primary-container": "#541200",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "inverse-primary": "#ffb5a0",
+                      "tertiary-container": "#757474",
+                      "surface": "#faf9f9",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "on-error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-md": "24px",
+                      "stack-lg": "40px",
+                      "gutter": "16px",
+                      "stack-sm": "12px",
+                      "margin-mobile": "20px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "label-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-background shadow-[0_4px_20px_rgba(176,47,0,0.04)] fixed docked full-width top-0 z-50">
+<div class="flex items-center justify-between px-margin-mobile py-4 max-w-7xl mx-auto w-full">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim tracking-tight">
+                BiteModern
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary transition-colors font-label-lg text-label-lg" href="#">Menu</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary transition-colors font-label-lg text-label-lg" href="#">Orders</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary transition-colors font-label-lg text-label-lg" href="#">Bag</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-1 font-label-lg text-label-lg" href="#">Profile</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container rounded-full border-none focus:ring-2 focus:ring-primary-container w-64 text-body-md" placeholder="Search menu..." type="text">
+</div>
+<button class="material-symbols-outlined md:hidden text-primary" data-icon="menu">menu</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<main class="flex-grow pt-24 pb-stack-lg max-w-7xl mx-auto w-full px-margin-mobile flex flex-col md:flex-row gap-8">
+<!-- Sidebar Navigation -->
+<aside class="w-full md:w-64 flex-shrink-0">
+<div class="bg-surface-container-lowest rounded-xl p-base shadow-sm border border-surface-variant/30 sticky top-28">
+<div class="flex flex-col space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="person">person</span>
+<span class="font-label-lg text-label-lg">Profile Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="history">history</span>
+<span class="font-label-lg text-label-lg">Order History</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="payments">payments</span>
+<span class="font-label-lg text-label-lg">Payment Methods</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary-container/10 text-primary font-bold border-l-4 border-primary" href="#">
+<span class="material-symbols-outlined" data-icon="settings" data-weight="fill" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-label-lg text-label-lg">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="help_outline">help_outline</span>
+<span class="font-label-lg text-label-lg">Support</span>
+</a>
+</div>
+<div class="mt-stack-md pt-stack-md border-t border-surface-variant/30 px-4">
+<button class="flex items-center gap-3 text-error font-medium hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-lg text-label-lg">Logout</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Canvas Area -->
+<section class="flex-grow">
+<header class="mb-stack-md">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Account Settings</h1>
+<p class="text-secondary mt-1">Manage your personal details, preferences, and security.</p>
+</header>
+<div class="space-y-stack-md">
+<!-- Personal Information -->
+<div class="bg-surface-container-lowest p-stack-md rounded-xl shadow-[0_4px_20px_rgba(255,87,34,0.06)] border border-surface-variant/20">
+<div class="flex items-center gap-2 mb-stack-sm text-primary">
+<span class="material-symbols-outlined" data-icon="badge">badge</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Personal Information</h2>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-stack-sm mt-4">
+<div class="space-y-1">
+<label class="font-label-lg text-label-lg text-on-surface-variant">Full Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary-container text-body-md text-on-surface" type="text" value="Alexander Thompson">
+</div>
+<div class="space-y-1">
+<label class="font-label-lg text-label-lg text-on-surface-variant">Email Address</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary-container text-body-md text-on-surface" type="email" value="alex.thompson@example.com">
+</div>
+<div class="space-y-1 md:col-span-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant">Phone Number</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary-container text-body-md text-on-surface" type="tel" value="+1 (555) 012-3456">
+</div>
+<div class="md:col-span-2 pt-2">
+<button class="bg-primary-container text-on-primary px-8 py-3 rounded-full font-label-lg text-label-lg hover:shadow-lg transition-all active:scale-95" type="submit">Update Information</button>
+</div>
+</form>
+</div>
+<!-- Notifications -->
+<div class="bg-surface-container-lowest p-stack-md rounded-xl shadow-[0_4px_20px_rgba(255,87,34,0.06)] border border-surface-variant/20">
+<div class="flex items-center gap-2 mb-stack-sm text-primary">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Notifications</h2>
+</div>
+<div class="space-y-4 mt-4">
+<div class="flex items-center justify-between p-4 bg-background rounded-xl">
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Email Receipts</h3>
+<p class="text-label-sm text-secondary">Receive a digital copy of every order.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer toggle-checkbox" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-4 bg-background rounded-xl">
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Push Notifications</h3>
+<p class="text-label-sm text-secondary">Order status updates and arrival alerts.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer toggle-checkbox" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-4 bg-background rounded-xl">
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">SMS Marketing</h3>
+<p class="text-label-sm text-secondary">Exclusive deals and limited time offers via text.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer toggle-checkbox" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Security -->
+<div class="bg-surface-container-lowest p-stack-md rounded-xl shadow-[0_4px_20px_rgba(255,87,34,0.06)] border border-surface-variant/20">
+<div class="flex items-center gap-2 mb-stack-sm text-primary">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Security &amp; Linked Accounts</h2>
+</div>
+<div class="mt-4 space-y-4">
+<button class="w-full flex items-center justify-between p-4 bg-surface-container-low rounded-xl hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="lock">lock</span>
+<span class="font-label-lg text-label-lg">Change Password</span>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</button>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex items-center justify-between p-4 border border-surface-variant/30 rounded-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4285F4]" data-icon="google">google</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg">Google</span>
+<span class="text-label-sm text-secondary">Connected</span>
+</div>
+</div>
+<button class="text-primary font-label-lg text-label-lg hover:underline">Manage</button>
+</div>
+<div class="flex items-center justify-between p-4 border border-surface-variant/30 rounded-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface" data-icon="apple">apps</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg">Apple</span>
+<span class="text-label-sm text-secondary">Not Linked</span>
+</div>
+</div>
+<button class="text-primary font-label-lg text-label-lg hover:underline">Link</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Account Actions -->
+<div class="pt-stack-md flex flex-col items-center gap-4">
+<button class="text-secondary hover:text-on-surface transition-colors flex items-center gap-2 font-label-lg text-label-lg">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                        Sign out from all devices
+                    </button>
+<button class="text-error font-medium hover:underline text-label-sm">
+                        Delete Account and Personal Data
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest border-t border-surface-variant full-width rounded-t-lg">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile py-stack-md max-w-7xl mx-auto w-full">
+<div class="mb-6 md:mb-0 text-center md:text-left">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">BiteModern</div>
+<p class="text-secondary dark:text-secondary-fixed-dim font-body-md text-body-md mt-1">© 2024 BiteModern. High-end fast-food reimagined.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-sm text-label-sm focus:underline underline-offset-4" href="#">Support</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-sm text-label-sm focus:underline underline-offset-4" href="#">Privacy Policy</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-sm text-label-sm focus:underline underline-offset-4" href="#">Terms of Service</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-sm text-label-sm focus:underline underline-offset-4" href="#">Locations</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-sm text-label-sm focus:underline underline-offset-4" href="#">Careers</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for input focus
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.parentElement.classList.add('ring-1', 'ring-primary/10');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.parentElement.classList.remove('ring-1', 'ring-primary/10');
+            });
+        });
+
+        // Simple toggle state management
+        document.querySelectorAll('.toggle-checkbox').forEach(toggle => {
+            toggle.addEventListener('change', function() {
+                const parent = this.closest('.bg-background');
+                if (this.checked) {
+                    parent.classList.add('ring-1', 'ring-primary/20');
+                } else {
+                    parent.classList.remove('ring-1', 'ring-primary/20');
+                }
+            });
+        });
+    </script>
+</body></html>

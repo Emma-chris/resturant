@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#faf9f9",
+                        "surface-container": "#efeeed",
+                        "surface-variant": "#e3e2e2",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#5c5c5c",
+                        "surface-tint": "#b02f00",
+                        "on-surface": "#1a1c1c",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#faf9f9",
+                        "primary-container": "#ff5722",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-primary-container": "#541200",
+                        "inverse-on-surface": "#f1f0f0",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#757474",
+                        "primary": "#b02f00",
+                        "on-surface-variant": "#5b4039",
+                        "inverse-surface": "#2f3131",
+                        "outline-variant": "#e4beb4",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#ffdbd1",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-container-high": "#e9e8e8",
+                        "secondary": "#5d5f5f",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface": "#faf9f9",
+                        "secondary-container": "#dcdddd",
+                        "surface-container-highest": "#e3e2e2",
+                        "outline": "#907067",
+                        "on-primary-fixed-variant": "#862200",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container-low": "#f4f3f3",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "on-primary-fixed": "#3b0900",
+                        "inverse-primary": "#ffb5a0",
+                        "on-background": "#1a1c1c",
+                        "on-secondary-container": "#5f6161",
+                        "on-tertiary-container": "#fffcfb",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dadada"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "40px",
+                        "base": "8px",
+                        "margin-mobile": "20px",
+                        "stack-sm": "12px",
+                        "stack-md": "24px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .support-card:hover .icon-box {
+            transform: scale(1.1);
+            background-color: #ff5722;
+            color: white;
+        }
+        .support-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hero-mesh {
+            background: radial-gradient(circle at top right, rgba(255, 87, 34, 0.05), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(255, 87, 34, 0.03), transparent 40%);
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md selection:bg-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm shadow-primary/5 h-20">
+<nav class="flex justify-between items-center h-full px-margin-mobile md:px-stack-lg max-w-7xl mx-auto">
+<div class="font-display-lg text-display-lg font-bold text-primary tracking-tight">BiteModern</div>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center space-x-gutter">
+<a class="font-label-lg text-label-lg tracking-wide text-secondary hover:text-primary transition-colors" href="#">Menu</a>
+<a class="font-label-lg text-label-lg tracking-wide text-secondary hover:text-primary transition-colors" href="#">Orders</a>
+<a class="font-label-lg text-label-lg tracking-wide text-secondary hover:text-primary transition-colors" href="#">Bag</a>
+<a class="font-label-lg text-label-lg tracking-wide text-secondary hover:text-primary transition-colors" href="#">Profile</a>
+</div>
+<div class="flex items-center space-x-gutter">
+<button class="active:scale-95 duration-150 transition-all">
+<span class="material-symbols-outlined text-primary" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="active:scale-95 duration-150 transition-all">
+<span class="material-symbols-outlined text-primary" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative py-stack-lg hero-mesh border-b border-surface-variant/30">
+<div class="max-w-3xl mx-auto px-margin-mobile text-center py-16 md:py-24">
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-on-surface mb-stack-md">How can we help you?</h1>
+<div class="relative group">
+<div class="absolute inset-y-0 left-5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-secondary" data-icon="search">search</span>
+</div>
+<input class="w-full pl-14 pr-6 py-5 bg-surface-container border-none rounded-full text-body-lg focus:ring-2 focus:ring-primary-container transition-all shadow-sm hover:shadow-md" placeholder="Search for help..." type="text"/>
+</div>
+<div class="mt-stack-sm flex flex-wrap justify-center gap-base">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest opacity-60">Popular:</span>
+<a class="font-label-sm text-label-sm text-primary hover:underline" href="#">Track Order</a>
+<a class="font-label-sm text-label-sm text-primary hover:underline" href="#">Refund Policy</a>
+<a class="font-label-sm text-label-sm text-primary hover:underline" href="#">Allergens</a>
+</div>
+</div>
+</section>
+<!-- Categories Grid -->
+<section class="max-w-7xl mx-auto px-margin-mobile md:px-stack-lg py-24">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter md:gap-stack-md">
+<!-- Category Card: Orders & Delivery -->
+<div class="support-card group flex flex-col p-stack-md bg-surface-container-lowest border border-surface-variant/50 rounded-xl hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 cursor-pointer">
+<div class="icon-box w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-stack-sm transition-all duration-300">
+<span class="material-symbols-outlined text-3xl" data-icon="local_shipping">local_shipping</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-base">Orders &amp; Delivery</h3>
+<p class="font-body-md text-body-md text-secondary">Track your current order or report an issue with delivery.</p>
+<div class="mt-auto pt-stack-sm flex items-center text-primary font-label-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                        View Articles <span class="material-symbols-outlined ml-1 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Category Card: Account & Profile -->
+<div class="support-card group flex flex-col p-stack-md bg-surface-container-lowest border border-surface-variant/50 rounded-xl hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 cursor-pointer">
+<div class="icon-box w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-stack-sm transition-all duration-300">
+<span class="material-symbols-outlined text-3xl" data-icon="person">person</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-base">Account &amp; Profile</h3>
+<p class="font-body-md text-body-md text-secondary">Manage your personal info, addresses, and communication preferences.</p>
+<div class="mt-auto pt-stack-sm flex items-center text-primary font-label-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                        Manage Profile <span class="material-symbols-outlined ml-1 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Category Card: Payment & Billing -->
+<div class="support-card group flex flex-col p-stack-md bg-surface-container-lowest border border-surface-variant/50 rounded-xl hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 cursor-pointer">
+<div class="icon-box w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-stack-sm transition-all duration-300">
+<span class="material-symbols-outlined text-3xl" data-icon="credit_card">credit_card</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-base">Payment &amp; Billing</h3>
+<p class="font-body-md text-body-md text-secondary">Update payment methods, view receipts, and resolve billing issues.</p>
+<div class="mt-auto pt-stack-sm flex items-center text-primary font-label-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                        See Billing <span class="material-symbols-outlined ml-1 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Category Card: Offers & Rewards -->
+<div class="support-card group flex flex-col p-stack-md bg-surface-container-lowest border border-surface-variant/50 rounded-xl hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 cursor-pointer">
+<div class="icon-box w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-stack-sm transition-all duration-300">
+<span class="material-symbols-outlined text-3xl" data-icon="redeem">redeem</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-base">Offers &amp; Rewards</h3>
+<p class="font-body-md text-body-md text-secondary">Learn about our loyalty program and how to redeem your BitePoints.</p>
+<div class="mt-auto pt-stack-sm flex items-center text-primary font-label-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                        Reward Hub <span class="material-symbols-outlined ml-1 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Category Card: Menu & Nutrition -->
+<div class="support-card group flex flex-col p-stack-md bg-surface-container-lowest border border-surface-variant/50 rounded-xl hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 cursor-pointer">
+<div class="icon-box w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-stack-sm transition-all duration-300">
+<span class="material-symbols-outlined text-3xl" data-icon="restaurant">restaurant</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-base">Menu &amp; Nutrition</h3>
+<p class="font-body-md text-body-md text-secondary">Information about ingredients, allergens, and our sourcing philosophy.</p>
+<div class="mt-auto pt-stack-sm flex items-center text-primary font-label-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                        Nutrition Guide <span class="material-symbols-outlined ml-1 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Category Card: Corporate & Careers -->
+<div class="support-card group flex flex-col p-stack-md bg-surface-container-lowest border border-surface-variant/50 rounded-xl hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 cursor-pointer">
+<div class="icon-box w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-stack-sm transition-all duration-300">
+<span class="material-symbols-outlined text-3xl" data-icon="business_center">business_center</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-base">Corporate &amp; Careers</h3>
+<p class="font-body-md text-body-md text-secondary">Contact our corporate office or learn about working at BiteModern.</p>
+<div class="mt-auto pt-stack-sm flex items-center text-primary font-label-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                        Join Us <span class="material-symbols-outlined ml-1 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-7xl mx-auto px-margin-mobile md:px-stack-lg mb-24">
+<div class="relative overflow-hidden bg-primary-container rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between shadow-2xl">
+<div class="relative z-10 text-white max-w-lg mb-stack-md md:mb-0">
+<h2 class="font-headline-lg text-headline-lg mb-base">Still need help?</h2>
+<p class="font-body-lg text-body-lg opacity-90">Our support team is available 24/7 to assist with your cravings. Reach out anytime.</p>
+</div>
+<div class="relative z-10 flex flex-col sm:flex-row gap-gutter">
+<button class="bg-surface-container-lowest text-primary px-8 py-4 rounded-full font-label-lg shadow-lg hover:scale-105 active:scale-95 transition-all">
+                        Chat with Us
+                    </button>
+<button class="bg-primary border border-white/30 text-white px-8 py-4 rounded-full font-label-lg hover:bg-primary/90 transition-all">
+                        Email Support
+                    </button>
+</div>
+<!-- Decorative element -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-on-primary-container/20 rounded-full blur-3xl"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full py-stack-lg border-t border-surface-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md px-margin-mobile md:px-stack-lg max-w-7xl mx-auto items-center">
+<div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface mb-base">BiteModern</div>
+<p class="font-label-sm text-label-sm text-secondary">© 2024 BiteModern. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap md:justify-end gap-gutter">
+<a class="font-label-sm text-label-sm text-secondary hover:text-on-surface hover:underline transition-all" href="#">Legal</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-on-surface hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-on-surface hover:underline transition-all" href="#">Contact Support</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-on-surface hover:underline transition-all" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+        // Subtle interaction for the search bar
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-[1.02]');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-[1.02]');
+        });
+
+        // Hover effect for the whole page depth
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            document.querySelector('.hero-mesh').style.background = `
+                radial-gradient(circle at ${x * 100}% ${y * 100}%, rgba(255, 87, 34, 0.08), transparent 45%),
+                radial-gradient(circle at ${100 - (x * 100)}% ${100 - (y * 100)}%, rgba(255, 87, 34, 0.04), transparent 45%)
+            `;
+        });
+    </script>
+</body></html>

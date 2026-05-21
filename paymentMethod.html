@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BiteModern | Payment Methods</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+    .glass-card {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-bright": "#faf9f9",
+            "on-secondary-fixed-variant": "#454747",
+            "primary-container": "#ff5722",
+            "on-secondary-fixed": "#1a1c1c",
+            "inverse-primary": "#ffb5a0",
+            "outline-variant": "#e4beb4",
+            "surface-container-low": "#f4f3f3",
+            "primary-fixed-dim": "#ffb5a0",
+            "secondary-fixed": "#e2e2e2",
+            "surface-container-highest": "#e3e2e2",
+            "on-tertiary-container": "#fffcfb",
+            "on-surface-variant": "#5b4039",
+            "on-secondary-container": "#5f6161",
+            "on-tertiary-fixed": "#1b1c1c",
+            "on-primary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed-dim": "#c8c6c5",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#efeeed",
+            "tertiary-container": "#757474",
+            "surface": "#faf9f9",
+            "on-primary-fixed": "#3b0900",
+            "secondary-container": "#dcdddd",
+            "outline": "#907067",
+            "surface-container-high": "#e9e8e8",
+            "secondary-fixed-dim": "#c6c6c7",
+            "error-container": "#ffdad6",
+            "tertiary-fixed": "#e5e2e1",
+            "surface-dim": "#dadada",
+            "primary-fixed": "#ffdbd1",
+            "on-error-container": "#93000a",
+            "on-background": "#1a1c1c",
+            "inverse-surface": "#2f3131",
+            "primary": "#b02f00",
+            "on-secondary": "#ffffff",
+            "surface-variant": "#e3e2e2",
+            "tertiary": "#5c5c5c",
+            "on-tertiary-fixed-variant": "#474746",
+            "on-primary-fixed-variant": "#862200",
+            "on-primary-container": "#541200",
+            "inverse-on-surface": "#f1f0f0",
+            "error": "#ba1a1a",
+            "surface-tint": "#b02f00",
+            "on-error": "#ffffff",
+            "on-surface": "#1a1c1c",
+            "background": "#faf9f9",
+            "secondary": "#5d5f5f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "20px",
+            "gutter": "16px",
+            "stack-md": "24px",
+            "stack-lg": "40px",
+            "base": "8px",
+            "stack-sm": "12px"
+          },
+          "fontFamily": {
+            "headline-md": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "label-sm": ["Inter"],
+            "label-lg": ["Inter"],
+            "headline-lg": ["Inter"],
+            "display-lg": ["Inter"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- Top Navigation Shell -->
+<header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm shadow-primary/5 fixed top-0 w-full z-50">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-stack-lg max-w-7xl mx-auto">
+<div class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-fixed tracking-tight">
+        BiteModern
+      </div>
+<nav class="hidden md:flex items-center space-x-gutter">
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-lg text-label-lg tracking-wide" href="#">Menu</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-lg text-label-lg tracking-wide" href="#">Orders</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-lg text-label-lg tracking-wide" href="#">Bag</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary font-label-lg text-label-lg tracking-wide" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-opacity" data-icon="shopping_bag">shopping_bag</button>
+<button class="material-symbols-outlined text-primary font-bold transition-opacity" data-icon="account_circle">account_circle</button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-stack-lg px-margin-mobile md:px-stack-lg max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row gap-stack-lg">
+<!-- Account Sidebar (Matching DATA:SCREEN:SCREEN_22) -->
+<aside class="w-full md:w-64 flex-shrink-0">
+<div class="space-y-base">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-secondary hover:bg-surface-container-low transition-colors font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined">person</span>
+            Personal Info
+          </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-secondary hover:bg-surface-container-low transition-colors font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined">history</span>
+            Order History
+          </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary-container/10 text-primary font-bold font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+            Payment Methods
+          </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-secondary hover:bg-surface-container-low transition-colors font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined">location_on</span>
+            Addresses
+          </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-secondary hover:bg-surface-container-low transition-colors font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+            Settings
+          </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<section class="flex-grow">
+<div class="mb-stack-md">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">Payment Methods</h1>
+<p class="font-body-md text-body-md text-secondary">Securely manage your saved cards and digital wallets.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Visa Infinite Card -->
+<div class="relative overflow-hidden aspect-[1.58/1] rounded-3xl bg-neutral-900 text-white p-8 shadow-xl flex flex-col justify-between group transition-transform duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<img alt="Card Pattern" class="w-full h-full object-cover" data-alt="A sophisticated abstract background featuring flowing dark silk textures and subtle charcoal gradients. The atmosphere is premium and minimalist, reflecting a high-end luxury brand aesthetic with deep shadows and soft, ambient lighting. The visual style is crisp and elegant, fitting for a premium financial product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_Xi-ltOqS4roymR_iaIzlOhgzwLQXWBLbzBgfER37kjA50o_vdK9rZ2KhSehvWEx7yYgDl9VDVnfupHfhb2u-9wPW5Bh6xBbI6KasnnVDMiP-SMhfCwfMyrP0ReKeeUXyV_3no3sSNUt6Cqzb0BXBciyJJszLW-JHzxhs3FfKFiCO2BVW12YEwNZO-T-kacX6ZldgHdNd0m-MBQmbBEYzAY4O9AeaLsTEslur3CUJBfldHQrX82rA-CJPntQ8I4FOn9NV6RfukUOu"/>
+</div>
+<div class="relative z-10 flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg opacity-80 uppercase tracking-widest">Visa Infinite</span>
+<span class="font-headline-md text-headline-md mt-1">Premium Member</span>
+</div>
+<div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-md">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">contactless</span>
+</div>
+</div>
+<div class="relative z-10">
+<div class="font-headline-md text-headline-md tracking-[0.2em] mb-4">•••• •••• •••• 8842</div>
+<div class="flex justify-between items-end">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm opacity-60 uppercase">Expiry</span>
+<span class="font-label-lg text-label-lg">12/28</span>
+</div>
+<div class="h-8">
+<!-- Simplified Visa Logo Representation -->
+<span class="italic font-extrabold text-xl text-white">VISA</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Apple Pay Section -->
+<div class="bg-surface-container-low rounded-3xl p-8 border border-outline-variant/30 flex flex-col justify-between hover:border-primary/30 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 bg-black rounded-2xl flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-3xl">apps</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md">Apple Pay</h3>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">Active</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-secondary mt-4">
+              Your default wallet is set to Apple Pay for express checkout and secure touch-free transactions.
+            </p>
+<button class="mt-6 flex items-center justify-center gap-2 w-full py-3 rounded-full border border-secondary text-secondary font-semibold hover:bg-surface-container transition-colors active:scale-95 duration-150">
+              Manage Wallet
+            </button>
+</div>
+<!-- Add New Payment Method (Bento Style) -->
+<button class="lg:col-span-2 group flex flex-col items-center justify-center gap-4 p-10 rounded-3xl border-2 border-dashed border-outline-variant hover:border-primary hover:bg-primary-fixed/20 transition-all active:scale-[0.99] duration-150">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">add_card</span>
+</div>
+<div class="text-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Add New Payment Method</h3>
+<p class="font-body-md text-body-md text-secondary">Credit card, Debit card, or Gift card</p>
+</div>
+</button>
+</div>
+<!-- Security Notice -->
+<div class="mt-stack-lg p-6 bg-surface-container-lowest rounded-2xl border border-outline-variant/20 flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">shield_lock</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Secure Transactions</h4>
+<p class="font-label-sm text-label-sm text-secondary mt-1">BiteModern uses industry-standard 256-bit SSL encryption to protect your data. We never store your full CVV or sensitive pin numbers on our servers.</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest w-full py-stack-lg mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md px-margin-mobile md:px-stack-lg max-w-7xl mx-auto">
+<div class="flex flex-col gap-4">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">BiteModern</div>
+<p class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim">© 2024 BiteModern. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap gap-x-8 gap-y-4 items-center md:justify-end">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface hover:underline transition-all font-label-sm text-label-sm cursor-pointer" href="#">Legal</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface hover:underline transition-all font-label-sm text-label-sm cursor-pointer" href="#">Privacy Policy</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface hover:underline transition-all font-label-sm text-label-sm cursor-pointer" href="#">Contact Support</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface hover:underline transition-all font-label-sm text-label-sm cursor-pointer" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<!-- Micro-interactions Script -->
+<script>
+    document.querySelectorAll('.active\\:scale-95').forEach(el => {
+      el.addEventListener('mousedown', () => el.style.transform = 'scale(0.95)');
+      el.addEventListener('mouseup', () => el.style.transform = '');
+      el.addEventListener('mouseleave', () => el.style.transform = '');
+    });
+  </script>
+</body></html>

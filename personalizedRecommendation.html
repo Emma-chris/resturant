@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BiteModern | Personalized Recommendations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .product-card:hover .product-image {
+            scale: 1.05;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#b02f00",
+                    "inverse-primary": "#ffb5a0",
+                    "on-background": "#1a1c1c",
+                    "surface-bright": "#faf9f9",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#541200",
+                    "surface-tint": "#b02f00",
+                    "on-surface": "#1a1c1c",
+                    "tertiary-container": "#757474",
+                    "on-surface-variant": "#5b4039",
+                    "tertiary": "#5c5c5c",
+                    "surface-container-high": "#e9e8e8",
+                    "surface": "#faf9f9",
+                    "surface-container-highest": "#e3e2e2",
+                    "primary-fixed": "#ffdbd1",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#5f6161",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#e2e2e2",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "outline": "#907067",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#3b0900",
+                    "outline-variant": "#e4beb4",
+                    "on-tertiary-container": "#fffcfb",
+                    "secondary": "#5d5f5f",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#e5e2e1",
+                    "background": "#faf9f9",
+                    "surface-dim": "#dadada",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e3e2e2",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "on-secondary-fixed-variant": "#454747",
+                    "secondary-container": "#dcdddd",
+                    "surface-container": "#efeeed",
+                    "primary-fixed-dim": "#ffb5a0",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-primary-fixed-variant": "#862200",
+                    "inverse-surface": "#2f3131",
+                    "inverse-on-surface": "#f1f0f0",
+                    "on-error": "#ffffff",
+                    "primary-container": "#ff5722",
+                    "surface-container-low": "#f4f3f3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "12px",
+                    "stack-md": "24px",
+                    "stack-lg": "40px",
+                    "gutter": "16px",
+                    "margin-mobile": "20px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "label-lg": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface min-h-screen selection:bg-primary/20">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-stack-lg py-4 bg-surface dark:bg-on-background shadow-[0_4px_20px_rgba(176,47,0,0.04)]">
+<div class="flex items-center gap-8">
+<span class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-container">BiteModern</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary-container transition-colors duration-200 font-label-lg text-label-lg" href="#">Menu</a>
+<a class="text-primary dark:text-inverse-primary font-semibold border-b-2 border-primary transition-colors duration-200 font-label-lg text-label-lg" href="#">For You</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary-container transition-colors duration-200 font-label-lg text-label-lg" href="#">Offers</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-container-low px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-outline mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md font-body-md w-48" placeholder="Search cravings..." type="text"/>
+</div>
+<button class="p-2 text-primary dark:text-inverse-primary hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="p-2 text-primary dark:text-inverse-primary hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</header>
+<main class="pt-32 pb-20 px-margin-mobile md:px-stack-lg max-w-7xl mx-auto">
+<!-- Hero Header -->
+<section class="mb-stack-lg">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface tracking-tight mb-2">Recommended for You</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Based on your love for smoky flavors and smash burgers.</p>
+</section>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter md:gap-stack-md">
+<!-- Card 1 (Main Image) -->
+<div class="product-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(255,87,34,0.06)] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(255,87,34,0.12)]">
+<div class="relative aspect-[3/4] overflow-hidden">
+<img alt="Gourmet Smash Burger" class="product-image object-cover w-full h-full transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0uhClBTSTX8M50kefUi5anQv-r5Km3LUetCXhdPlz1Qq7oVSD7fM38JAnrISAyRh5PlRC4FUf_o0oirmf-V4bcH6Rd8KbnHUm_TDcllPHV49Jg04yS1bMXi_foVkjVePZsnLmh68hoIajnLyJZ9Zs6O7X6UWQj-q3MnaIRhyjsg6X4W_SD1XJ22rKT_Nr8ET0eGHdGQRtMD-s8pAS6oRNohmzZ1B3t-_OdTX-nZy69inVszeDh8yy9pmP4o"/>
+<div class="absolute top-4 right-4 glass-card px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary scale-75" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="text-label-sm font-label-sm text-on-surface">Trending</span>
+</div>
+</div>
+<div class="p-stack-sm flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Truffle Bacon Melt</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Double smash patties, truffle aioli, crispy maple bacon, and melted fontina on brioche.</p>
+<div class="mt-auto flex flex-col gap-2">
+<button class="w-full bg-primary-container hover:bg-primary text-white font-label-lg text-label-lg py-3 rounded-full transition-all active:scale-95 shadow-lg shadow-primary-container/20">
+                            Add to Bag — $14.50
+                        </button>
+<button class="w-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-lg text-label-lg py-3 rounded-full transition-all">
+                            View Details
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="product-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(255,87,34,0.06)] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(255,87,34,0.12)]">
+<div class="relative aspect-[3/4] overflow-hidden">
+<img class="product-image object-cover w-full h-full transition-transform duration-500" data-alt="A close-up photograph of a premium spicy fried chicken burger with melted pepper jack cheese, crunchy slaw, and jalapeños. The lighting is bright and warm, emphasizing the crispy texture of the chicken. The composition is professional food photography style with a shallow depth of field, highlighting the vibrant colors and fresh ingredients against a clean, minimalist background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6a-MkUw6abuGUgrj2OjJsHDssyNQVHJuGHXuDO3L0awYklcX1rdM77-QeCFyhNtZVVTWxIznpbDULJl6WZpSwEP8cKVKMqQzuKtxR-9DJ1EEiNCzIKm5aFIYvbAp3MoaL42nIitMLEXWhAolbigeHMJ9FEcRIkfJf9VqAjZTtK072hfpHSBZkbB1HBJUuCzYy4TtUnHXqOSu4bVI8aVeCLbSzXxzwGtGSV2D64HV8pzmbu31il0xQqgnhjtLs1GZsi3pBWaNSx_5I"/>
+<div class="absolute top-4 right-4 glass-card px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary scale-75" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-label-sm font-label-sm text-on-surface">Spicy Pick</span>
+</div>
+</div>
+<div class="p-stack-sm flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Spicy Birdie</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Crispy buttermilk chicken breast, nashville hot oil, ghost pepper jack, and citrus slaw.</p>
+<div class="mt-auto flex flex-col gap-2">
+<button class="w-full bg-primary-container hover:bg-primary text-white font-label-lg text-label-lg py-3 rounded-full transition-all active:scale-95 shadow-lg shadow-primary-container/20">
+                            Add to Bag — $12.75
+                        </button>
+<button class="w-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-lg text-label-lg py-3 rounded-full transition-all">
+                            View Details
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="product-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(255,87,34,0.06)] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(255,87,34,0.12)]">
+<div class="relative aspect-[3/4] overflow-hidden">
+<img class="product-image object-cover w-full h-full transition-transform duration-500" data-alt="High-angle shot of gourmet loaded fries in a minimalist ceramic bowl. The fries are topped with smoky slow-cooked brisket, melted cheddar cheese sauce, pickled red onions, and a drizzle of spicy barbecue sauce. The scene is lit with soft, diffused sunlight, creating a bright and high-end aesthetic. The background is a clean white marble surface, perfect for a premium food delivery app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-Dxs1F1nd6i7-_v7nj17L21a9g7b5RxE5AhwHklEyhDqmEfDER8-8ZCzhxkV_gwtZoONlkW7Qyerdsmz010FVcI-fjW9NDQMnKoiIsxyxIr5pltQUlK1kofkoy1kURmWrkd7Jmvdq610UqawunjuifHvp1PwcI0Zvq5a1d8cT552AeYEbBpkCdJOjretQ-aMlduPa1KhzVSJ1tgJrZKligd2EPyueEzG-_WiONVIJmtCZn105h_Vq8ENwU8tSbZqWw5NyF473oChk"/>
+</div>
+<div class="p-stack-sm flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Smoky Brisket Fries</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">House-cut fries topped with 12-hour hickory smoked brisket and liquid gold cheddar.</p>
+<div class="mt-auto flex flex-col gap-2">
+<button class="w-full bg-primary-container hover:bg-primary text-white font-label-lg text-label-lg py-3 rounded-full transition-all active:scale-95 shadow-lg shadow-primary-container/20">
+                            Add to Bag — $9.95
+                        </button>
+<button class="w-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-lg text-label-lg py-3 rounded-full transition-all">
+                            View Details
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Insight Section -->
+<section class="mt-stack-lg">
+<div class="bg-primary/5 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-6 items-center md:items-start border border-primary/10">
+<div class="bg-primary text-white p-4 rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-3xl" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<div class="flex-grow text-center md:text-left">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Why you'll like this</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                        We noticed you often order the <span class="text-on-surface font-semibold">Classic Smash with extra jalapeños</span>. These items feature a similar balance of heat and savory umami that we think you'll love.
+                    </p>
+</div>
+<button class="whitespace-nowrap font-label-lg text-label-lg text-primary hover:underline underline-offset-4">
+                    See my flavor profile
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full flex flex-col md:flex-row justify-between items-center px-margin-mobile py-stack-md border-t border-outline-variant bg-surface-container-low dark:bg-surface-dim">
+<div class="mb-6 md:mb-0">
+<span class="font-headline-md text-headline-md font-bold text-on-surface dark:text-surface-bright">BiteModern</span>
+<p class="text-label-sm font-label-sm text-secondary mt-1">© 2024 BiteModern. High-End Fast Food.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-secondary-fixed hover:underline decoration-primary underline-offset-4 transition-all" href="#">Menu</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-secondary-fixed hover:underline decoration-primary underline-offset-4 transition-all" href="#">Nutrition</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-secondary-fixed hover:underline decoration-primary underline-offset-4 transition-all" href="#">Privacy</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-secondary-fixed hover:underline decoration-primary underline-offset-4 transition-all" href="#">Terms</a>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => {
+                btn.style.transform = 'scale(0.96)';
+            });
+            btn.addEventListener('mouseup', () => {
+                btn.style.transform = 'scale(1)';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>
