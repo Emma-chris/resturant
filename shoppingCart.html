@@ -1,253 +1,298 @@
-<!DOCTYPE html><html class="light" lang="en"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-error-container": "#93000a",
-                    "on-error": "#ffffff",
-                    "primary-fixed": "#ffdbd1",
-                    "on-tertiary-fixed-variant": "#474746",
-                    "surface-container": "#efeeed",
-                    "inverse-on-surface": "#f1f0f0",
-                    "secondary-fixed": "#e2e2e2",
-                    "on-tertiary-container": "#fffcfb",
-                    "inverse-primary": "#ffb5a0",
-                    "on-secondary-container": "#5f6161",
-                    "tertiary-fixed": "#e5e2e1",
-                    "primary-container": "#ff5722",
-                    "on-secondary": "#ffffff",
-                    "on-tertiary": "#ffffff",
-                    "on-secondary-fixed": "#1a1c1c",
-                    "surface": "#faf9f9",
-                    "outline": "#907067",
-                    "on-surface-variant": "#5b4039",
-                    "primary": "#b02f00",
-                    "tertiary": "#5c5c5c",
-                    "outline-variant": "#e4beb4",
-                    "on-primary-fixed": "#3b0900",
-                    "surface-container-high": "#e9e8e8",
-                    "secondary-fixed-dim": "#c6c6c7",
-                    "on-surface": "#1a1c1c",
-                    "on-background": "#1a1c1c",
-                    "primary-fixed-dim": "#ffb5a0",
-                    "surface-container-highest": "#e3e2e2",
-                    "surface-container-low": "#f4f3f3",
-                    "on-primary-container": "#541200",
-                    "inverse-surface": "#2f3131",
-                    "error-container": "#ffdad6",
-                    "surface-container-lowest": "#ffffff",
-                    "secondary": "#5d5f5f",
-                    "on-tertiary-fixed": "#1b1c1c",
-                    "surface-dim": "#dadada",
-                    "tertiary-fixed-dim": "#c8c6c5",
-                    "error": "#ba1a1a",
-                    "surface-variant": "#e3e2e2",
-                    "on-secondary-fixed-variant": "#454747",
-                    "on-primary": "#ffffff",
-                    "tertiary-container": "#757474",
-                    "surface-tint": "#b02f00",
-                    "on-primary-fixed-variant": "#862200",
-                    "surface-bright": "#faf9f9",
-                    "background": "#faf9f9",
-                    "secondary-container": "#dcdddd"
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffdbd1",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-container": "#efeeed",
+                        "inverse-on-surface": "#f1f0f0",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-tertiary-container": "#fffcfb",
+                        "inverse-primary": "#ffb5a0",
+                        "on-secondary-container": "#5f6161",
+                        "tertiary-fixed": "#e5e2e1",
+                        "primary-container": "#ff5722",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface": "#faf9f9",
+                        "outline": "#907067",
+                        "on-surface-variant": "#5b4039",
+                        "primary": "#b02f00",
+                        "tertiary": "#5c5c5c",
+                        "outline-variant": "#e4beb4",
+                        "on-primary-fixed": "#3b0900",
+                        "surface-container-high": "#e9e8e8",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-surface": "#1a1c1c",
+                        "on-background": "#1a1c1c",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "surface-container-highest": "#e3e2e2",
+                        "surface-container-low": "#f4f3f3",
+                        "on-primary-container": "#541200",
+                        "inverse-surface": "#2f3131",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#5d5f5f",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-dim": "#dadada",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e3e2e2",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#757474",
+                        "surface-tint": "#b02f00",
+                        "on-primary-fixed-variant": "#862200",
+                        "surface-bright": "#faf9f9",
+                        "background": "#faf9f9",
+                        "secondary-container": "#dcdddd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "stack-md": "24px",
+                        "stack-sm": "12px",
+                        "stack-lg": "40px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                },
             },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "base": "8px",
-                    "margin-mobile": "20px",
-                    "gutter": "16px",
-                    "stack-md": "24px",
-                    "stack-sm": "12px",
-                    "stack-lg": "40px"
-            },
-            "fontFamily": {
-                    "label-sm": ["Inter"],
-                    "display-lg": ["Inter"],
-                    "headline-lg-mobile": ["Inter"],
-                    "body-lg": ["Inter"],
-                    "label-lg": ["Inter"],
-                    "headline-md": ["Inter"],
-                    "headline-lg": ["Inter"],
-                    "body-md": ["Inter"]
-            },
-            "fontSize": {
-                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
-                    "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
-                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
-                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
-            }
-          },
-        },
-      }
+        }
     </script>
-<style>
-        body { background-color: #faf9f9; }
+    <style>
+        body {
+            background-color: #faf9f9;
+        }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .glass-panel {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
+
         .custom-scrollbar::-webkit-scrollbar {
             width: 4px;
         }
+
         .custom-scrollbar::-webkit-scrollbar-track {
             background: transparent;
         }
+
         .custom-scrollbar::-webkit-scrollbar-thumb {
             background: #e4beb4;
             border-radius: 10px;
         }
     </style>
 </head>
+
 <body class="font-body-md text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
-<!-- TopAppBar (Web/Desktop Navigation) -->
-<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 md:px-16 h-16 bg-surface dark:bg-surface-dim shadow-sm shadow-primary/5">
-<div class="flex items-center gap-8">
-<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">BiteModern</span>
-<nav class="hidden md:flex items-center gap-6">
-<a class="text-secondary dark:text-secondary-fixed-dim hover:opacity-80 transition-opacity font-label-lg text-label-lg" href="#">Menu</a>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:opacity-80 transition-opacity font-label-lg text-label-lg" href="#">Orders</a>
-<a class="text-primary dark:text-primary-fixed-dim font-semibold font-label-lg text-label-lg" href="#">Bag</a>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:opacity-80 transition-opacity font-label-lg text-label-lg" href="#">Profile</a>
-</nav>
-</div>
-<div class="flex items-center gap-4">
-<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity" data-icon="shopping_bag">shopping_bag</button>
-<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity" data-icon="person">person</button>
-</div>
-</header>
-<main class="pt-24 pb-12 px-margin-mobile md:px-16 max-w-7xl mx-auto min-h-screen">
-<div class="flex flex-col lg:flex-row gap-stack-lg">
-<!-- Shopping Cart Content -->
-<div class="flex-1">
-<div class="mb-stack-md flex items-center justify-between">
-<h1 class="font-headline-lg text-headline-lg text-on-background">Your Bag</h1>
-<a class="flex items-center gap-2 text-primary font-label-lg text-label-lg hover:underline transition-all" href="#">
-<span class="material-symbols-outlined text-sm" data-icon="arrow_back">arrow_back</span>
+    <!-- TopAppBar (Web/Desktop Navigation) -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 md:px-16 h-16 bg-surface dark:bg-surface-dim shadow-sm shadow-primary/5">
+        <div class="flex items-center gap-8">
+            <span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim"><a
+                    href="index.html">BiteModern</a></span>
+            <nav class="hidden md:flex items-center gap-6">
+                <a class="text-secondary dark:text-secondary-fixed-dim hover:opacity-80 transition-opacity font-label-lg text-label-lg"
+                    href="personalizedRecommendation.html">Menu</a>
+                <a class="text-secondary dark:text-secondary-fixed-dim hover:opacity-80 transition-opacity font-label-lg text-label-lg"
+                    href="order.html">Orders</a>
+                <a class="text-primary dark:text-primary-fixed-dim font-semibold font-label-lg text-label-lg"
+                    href="shoppingCart.html">Bag</a>
+                <a class="text-secondary dark:text-secondary-fixed-dim hover:opacity-80 transition-opacity font-label-lg text-label-lg"
+                    href="setting.html">Profile</a>
+            </nav>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity"
+                data-icon="shopping_bag">shopping_bag</button>
+            <button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity"
+                data-icon="person">person</button>
+        </div>
+    </header>
+    <main class="pt-24 pb-12 px-margin-mobile md:px-16 max-w-7xl mx-auto min-h-screen">
+        <div class="flex flex-col lg:flex-row gap-stack-lg">
+            <!-- Shopping Cart Content -->
+            <div class="flex-1">
+                <div class="mb-stack-md flex items-center justify-between">
+                    <h1 class="font-headline-lg text-headline-lg text-on-background">Your Bag</h1>
+                    <a class="flex items-center gap-2 text-primary font-label-lg text-label-lg hover:underline transition-all"
+                        href="#">
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_back">arrow_back</span>
                         Continue Shopping
                     </a>
-</div>
-<div class="space-y-gutter">
-<!-- Cart Item: The Classic Smash -->
-<div class="bg-surface-container-lowest rounded-xl p-stack-sm flex gap-stack-md shadow-sm border border-outline-variant/10 hover:shadow-md transition-shadow">
-<div class="w-32 h-32 md:w-40 md:h-40 shrink-0 overflow-hidden rounded-lg bg-surface-container">
-<img alt="The Classic Smash Burger" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhClBTSTX8M50kefUi5anQv-r5Km3LUetCXhdPlz1Qq7oVSD7fM38JAnrISAyRh5PlRC4FUf_o0oirmf-V4bcH6Rd8KbnHUm_TDcllPHV49Jg04yS1bMXi_foVkjVePZsnLmh68hoIajnLyJZ9Zs6O7X6UWQj-q3MnaIRhyjsg6X4W_SD1XJ22rKT_Nr8ET0eGHdGQRtMD-s8pAS6oRNohmzZ1B3t-_OdTX-nZy69inVszeDh8yy9pmP4o">
-</div>
-<div class="flex-1 flex flex-col justify-between py-1">
-<div class="flex justify-between items-start">
-<div>
-<h3 class="font-headline-md text-headline-md text-on-surface">The Classic Smash</h3>
-<div class="flex flex-wrap gap-2 mt-2">
-<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm rounded-full">Extra Cheese</span>
-<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm rounded-full">Bacon</span>
-</div>
-</div>
-<p class="font-headline-md text-headline-md text-primary">$8.99</p>
-</div>
-<div class="flex justify-between items-center mt-4">
-<div class="flex items-center bg-surface-container rounded-full px-2 py-1">
-<button class="w-8 h-8 flex items-center justify-center rounded-full text-secondary hover:bg-outline-variant/20 transition-colors" onclick="decrement('qty-1')">
-<span class="material-symbols-outlined text-lg" data-icon="remove">remove</span>
-</button>
-<span class="w-10 text-center font-label-lg text-label-lg" id="qty-1">1</span>
-<button class="w-8 h-8 flex items-center justify-center rounded-full text-secondary hover:bg-outline-variant/20 transition-colors" onclick="increment('qty-1')">
-<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
-</button>
-</div>
-<button class="flex items-center gap-1 text-error hover:opacity-70 transition-opacity font-label-lg text-label-lg">
-<span class="material-symbols-outlined text-lg" data-icon="delete_outline">delete_outline</span>
+                </div>
+                <div class="space-y-gutter">
+                    <!-- Cart Item: The Classic Smash -->
+                    <div
+                        class="bg-surface-container-lowest rounded-xl p-stack-sm flex gap-stack-md shadow-sm border border-outline-variant/10 hover:shadow-md transition-shadow">
+                        <div class="w-32 h-32 md:w-40 md:h-40 shrink-0 overflow-hidden rounded-lg bg-surface-container">
+                            <img alt="The Classic Smash Burger" class="w-full h-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida/ADBb0uhClBTSTX8M50kefUi5anQv-r5Km3LUetCXhdPlz1Qq7oVSD7fM38JAnrISAyRh5PlRC4FUf_o0oirmf-V4bcH6Rd8KbnHUm_TDcllPHV49Jg04yS1bMXi_foVkjVePZsnLmh68hoIajnLyJZ9Zs6O7X6UWQj-q3MnaIRhyjsg6X4W_SD1XJ22rKT_Nr8ET0eGHdGQRtMD-s8pAS6oRNohmzZ1B3t-_OdTX-nZy69inVszeDh8yy9pmP4o">
+                        </div>
+                        <div class="flex-1 flex flex-col justify-between py-1">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-headline-md text-headline-md text-on-surface">The Classic Smash</h3>
+                                    <div class="flex flex-wrap gap-2 mt-2">
+                                        <span
+                                            class="px-3 py-1 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm rounded-full">Extra
+                                            Cheese</span>
+                                        <span
+                                            class="px-3 py-1 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm rounded-full">Bacon</span>
+                                    </div>
+                                </div>
+                                <p class="font-headline-md text-headline-md text-primary">$8.99</p>
+                            </div>
+                            <div class="flex justify-between items-center mt-4">
+                                <div class="flex items-center bg-surface-container rounded-full px-2 py-1">
+                                    <button
+                                        class="w-8 h-8 flex items-center justify-center rounded-full text-secondary hover:bg-outline-variant/20 transition-colors"
+                                        onclick="decrement('qty-1')">
+                                        <span class="material-symbols-outlined text-lg" data-icon="remove">remove</span>
+                                    </button>
+                                    <span class="w-10 text-center font-label-lg text-label-lg" id="qty-1">1</span>
+                                    <button
+                                        class="w-8 h-8 flex items-center justify-center rounded-full text-secondary hover:bg-outline-variant/20 transition-colors"
+                                        onclick="increment('qty-1')">
+                                        <span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+                                    </button>
+                                </div>
+                                <button
+                                    class="flex items-center gap-1 text-error hover:opacity-70 transition-opacity font-label-lg text-label-lg">
+                                    <span class="material-symbols-outlined text-lg"
+                                        data-icon="delete_outline">delete_outline</span>
                                     Remove
                                 </button>
-</div>
-</div>
-</div>
-<!-- Additional Cart Suggestions / Empty states could go here -->
-<div class="border-2 border-dashed border-outline-variant/40 rounded-xl p-8 flex flex-col items-center justify-center text-center opacity-60">
-<span class="material-symbols-outlined text-4xl mb-2" data-icon="add_circle_outline">add_circle_outline</span>
-<p class="font-label-lg text-label-lg">Add a side or drink?</p>
-</div>
-</div>
-</div>
-<!-- Order Summary Sidebar -->
-<aside class="w-full lg:w-[400px] shrink-0">
-<div class="sticky top-24 bg-surface-container-lowest rounded-xl p-8 shadow-lg shadow-primary/5 border border-outline-variant/20">
-<h2 class="font-headline-md text-headline-md mb-6">Order Summary</h2>
-<div class="space-y-4 mb-6">
-<div class="flex justify-between items-center">
-<span class="text-secondary font-body-md">Subtotal</span>
-<span class="text-on-surface font-label-lg text-label-lg">$8.99</span>
-</div>
-<div class="flex justify-between items-center">
-<span class="text-secondary font-body-md">Delivery Fee</span>
-<span class="text-on-surface font-label-lg text-label-lg">$2.00</span>
-</div>
-<div class="flex justify-between items-center">
-<span class="text-secondary font-body-md">Tax</span>
-<span class="text-on-surface font-label-lg text-label-lg">$0.72</span>
-</div>
-<div class="h-px bg-outline-variant/30 my-4"></div>
-<div class="flex justify-between items-center">
-<span class="text-on-surface font-headline-md text-headline-md">Total</span>
-<span class="text-primary font-headline-md text-headline-md">$11.71</span>
-</div>
-</div>
-<div class="bg-primary-fixed/20 p-4 rounded-lg mb-8 flex items-start gap-3">
-<span class="material-symbols-outlined text-primary" data-icon="local_offer">local_offer</span>
-<div>
-<p class="text-on-primary-fixed-variant font-label-lg text-label-lg">Available Offers</p>
-<p class="text-secondary font-label-sm text-label-sm">Free fries on orders over $15</p>
-</div>
-</div>
-<button class="w-full py-4 bg-primary-container text-on-primary hover:opacity-90 active:scale-[0.98] transition-all rounded-full font-label-lg text-label-lg shadow-lg shadow-primary-container/20 flex justify-center items-center gap-2">
-                        Proceed to Checkout
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Additional Cart Suggestions / Empty states could go here -->
+                    <div
+                        class="border-2 border-dashed border-outline-variant/40 rounded-xl p-8 flex flex-col items-center justify-center text-center opacity-60">
+                        <span class="material-symbols-outlined text-4xl mb-2"
+                            data-icon="add_circle_outline">add_circle_outline</span>
+                        <p class="font-label-lg text-label-lg">Add a side or drink?</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Order Summary Sidebar -->
+            <aside class="w-full lg:w-[400px] shrink-0">
+                <div
+                    class="sticky top-24 bg-surface-container-lowest rounded-xl p-8 shadow-lg shadow-primary/5 border border-outline-variant/20">
+                    <h2 class="font-headline-md text-headline-md mb-6">Order Summary</h2>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex justify-between items-center">
+                            <span class="text-secondary font-body-md">Subtotal</span>
+                            <span class="text-on-surface font-label-lg text-label-lg">$8.99</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-secondary font-body-md">Delivery Fee</span>
+                            <span class="text-on-surface font-label-lg text-label-lg">$2.00</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-secondary font-body-md">Tax</span>
+                            <span class="text-on-surface font-label-lg text-label-lg">$0.72</span>
+                        </div>
+                        <div class="h-px bg-outline-variant/30 my-4"></div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-on-surface font-headline-md text-headline-md">Total</span>
+                            <span class="text-primary font-headline-md text-headline-md">$11.71</span>
+                        </div>
+                    </div>
+                    <div class="bg-primary-fixed/20 p-4 rounded-lg mb-8 flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary" data-icon="local_offer">local_offer</span>
+                        <div>
+                            <p class="text-on-primary-fixed-variant font-label-lg text-label-lg">Available Offers</p>
+                            <p class="text-secondary font-label-sm text-label-sm">Free fries on orders over $15</p>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full py-4 bg-primary-container text-on-primary hover:opacity-90 active:scale-[0.98] transition-all rounded-full font-label-lg text-label-lg shadow-lg shadow-primary-container/20 flex justify-center items-center gap-2">
+                        <a href="checkout.html"> Proceed to Checkout</a>
                         <span class="material-symbols-outlined text-xl" data-icon="arrow_forward">arrow_forward</span>
-</button>
-<p class="mt-4 text-center text-secondary font-label-sm text-label-sm">
+                    </button>
+                    <p class="mt-4 text-center text-secondary font-label-sm text-label-sm">
                         Estimated delivery time: <span class="font-bold">25-35 mins</span>
-</p>
-</div>
-</aside>
-</div>
-</main>
-<!-- BottomNavBar (Mobile Only) -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-base pb-8 bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md border-t border-outline-variant/30 shadow-[0_-4px_12px_rgba(0,0,0,0.04)] rounded-t-xl">
-<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary-container transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="restaurant_menu">restaurant_menu</span>
-<span class="font-label-sm text-label-sm">Menu</span>
-</a>
-<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary-container transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
-<span class="font-label-sm text-label-sm">Orders</span>
-</a>
-<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim bg-primary-fixed/30 rounded-full px-4 py-1 active:scale-90 transition-all duration-150" href="#">
-<span class="material-symbols-outlined" data-icon="shopping_bag" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
-<span class="font-label-sm text-label-sm">Bag</span>
-</a>
-<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary-container transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="person">person</span>
-<span class="font-label-sm text-label-sm">Profile</span>
-</a>
-</nav>
-<script>
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <!-- BottomNavBar (Mobile Only) -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-base pb-8 bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md border-t border-outline-variant/30 shadow-[0_-4px_12px_rgba(0,0,0,0.04)] rounded-t-xl">
+        <a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary-container transition-colors"
+            href="#">
+            <span class="material-symbols-outlined" data-icon="restaurant_menu">restaurant_menu</span>
+            <span class="font-label-sm text-label-sm">Menu</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary-container transition-colors"
+            href="personalizedRecommendation.html">
+            <span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+            <span class="font-label-sm text-label-sm">Orders</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim bg-primary-fixed/30 rounded-full px-4 py-1 active:scale-90 transition-all duration-150"
+            href="shoppingCart.html">
+            <span class="material-symbols-outlined" data-icon="shopping_bag"
+                style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+            <span class="font-label-sm text-label-sm">Bag</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary-container transition-colors"
+            href="setting.html">
+            <span class="material-symbols-outlined" data-icon="person">person</span>
+            <span class="font-label-sm text-label-sm">Profile</span>
+        </a>
+    </nav>
+    <script>
         function increment(id) {
             const el = document.getElementById(id);
             let val = parseInt(el.innerText);
@@ -273,4 +318,6 @@
             });
         });
     </script>
-</body></html>
+</body>
+
+</html>
