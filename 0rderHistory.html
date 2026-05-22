@@ -1,12 +1,20 @@
-<!DOCTYPE html><html class="light" lang="en"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Order History - BiteModern</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script id="tailwind-config">
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Order History - BiteModern</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -85,230 +93,295 @@
                         "body-lg": ["Inter"]
                     },
                     "fontSize": {
-                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
-                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                        "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
-                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                        "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
-                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
                     }
                 },
             },
         }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             vertical-align: middle;
         }
+
         .order-card-shadow {
             shadow: 0 4px 20px rgba(176, 47, 0, 0.04);
         }
     </style>
 </head>
+
 <body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
-<!-- TopNavBar -->
-<header class="bg-surface dark:bg-background shadow-sm docked full-width top-0 z-50">
-<div class="flex items-center justify-between px-margin-mobile py-4 max-w-7xl mx-auto w-full">
-<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim tracking-tight">
-                BiteModern
+    <!-- TopNavBar -->
+    <header class="bg-surface dark:bg-background shadow-sm docked full-width top-0 z-50">
+        <div class="flex items-center justify-between px-margin-mobile py-4 max-w-7xl mx-auto w-full">
+            <div
+                class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim tracking-tight">
+                <a href="index.html">BiteModern</a>
             </div>
-<nav class="hidden md:flex items-center space-x-8">
-<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary transition-colors font-label-lg text-label-lg" href="#">Menu</a>
-<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary transition-colors font-label-lg text-label-lg" href="#">Orders</a>
-<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary transition-colors font-label-lg text-label-lg" href="#">Bag</a>
-<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-1 font-label-lg text-label-lg" href="#">Profile</a>
-</nav>
-<div class="flex items-center space-x-4">
-<span class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer transition-all duration-200">search</span>
-<span class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer transition-all duration-200">shopping_bag</span>
-</div>
-</div>
-</header>
-<main class="flex-grow max-w-7xl mx-auto w-full px-margin-mobile py-stack-md md:py-stack-lg">
-<div class="flex flex-col md:grid md:grid-cols-12 gap-8">
-<!-- Sidebar Navigation -->
-<aside class="md:col-span-3 space-y-6">
-<!-- Profile Summary (Mobile & Desktop) -->
-<div class="bg-surface-container-lowest p-6 rounded-lg shadow-[0_4px_20px_rgba(176,47,0,0.04)] flex flex-col items-center md:items-start text-center md:text-left">
-<div class="w-20 h-20 bg-primary-fixed rounded-full flex items-center justify-center mb-4 border-2 border-surface-variant overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a friendly young man with short dark hair and a modern look, set against a clean, warm-toned minimalist background. The lighting is soft and even, emphasizing a high-end, premium aesthetic. The color palette is composed of soft beige and ivory tones with subtle warm highlights, creating a welcoming and sophisticated digital profile image." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAASHh73R1S82SV3ChjnEsbmokar3KjBVtqyN3b0kzjkMzz6RhN8oja6LMuHBFc9ui_duzpBRnvxemQShDm5PsZliweabSVaUi8em7EUrBUKUg6dWnAcMZBG1UyX0nWc8FXo-rXhAbAyxkjr_OugXKjVSOhJK3Krzaqyn8QWDe6TVnAu7vcCoFUql37CMRgFwj7o2TSUutk8LXnnn4FR7pxq6mskiR_hWxb52elyCCM_R_7EWIXHfne8i_O_RLzHIccVGblo7c3r1ir">
-</div>
-<h2 class="font-headline-md text-headline-md text-on-surface">Alex Johnson</h2>
-<p class="font-body-md text-body-md text-secondary mb-2">alex.j@example.com</p>
-<div class="inline-flex items-center bg-surface-container-high px-3 py-1 rounded-full">
-<span class="material-symbols-outlined text-sm mr-1" style="font-variation-settings: 'FILL' 1;">stars</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Member since 2023</span>
-</div>
-</div>
-<!-- Nav Links -->
-<nav class="bg-surface-container-lowest rounded-lg shadow-[0_4px_20px_rgba(176,47,0,0.04)] overflow-hidden">
-<ul class="divide-y divide-surface-variant">
-<li>
-<a class="flex items-center gap-3 p-4 bg-primary-fixed text-primary font-bold transition-all" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
-<span class="font-label-lg text-label-lg">Order History</span>
-</a>
-</li>
-<li>
-<a class="flex items-center gap-3 p-4 text-secondary hover:bg-surface-container-high transition-all" href="#">
-<span class="material-symbols-outlined">payments</span>
-<span class="font-label-lg text-label-lg">Payment Methods</span>
-</a>
-</li>
-<li>
-<a class="flex items-center gap-3 p-4 text-secondary hover:bg-surface-container-high transition-all" href="#">
-<span class="material-symbols-outlined">location_on</span>
-<span class="font-label-lg text-label-lg">Saved Addresses</span>
-</a>
-</li>
-<li>
-<a class="flex items-center gap-3 p-4 text-secondary hover:bg-surface-container-high transition-all" href="#">
-<span class="material-symbols-outlined">settings</span>
-<span class="font-label-lg text-label-lg">Settings</span>
-</a>
-</li>
-</ul>
-</nav>
-</aside>
-<!-- Main Content Area -->
-<section class="md:col-span-9">
-<div class="flex items-center justify-between mb-stack-md">
-<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Order History</h1>
-<div class="flex gap-2">
-<button class="bg-surface-container-high p-2 rounded-lg hover:bg-surface-variant transition-colors">
-<span class="material-symbols-outlined text-on-surface-variant">filter_list</span>
-</button>
-</div>
-</div>
-<div class="space-y-gutter">
-<!-- Order Card 1: In Progress -->
-<div class="bg-surface-container-lowest p-6 rounded-lg shadow-[0_4px_20px_rgba(176,47,0,0.04)] border-l-4 border-primary transition-transform hover:scale-[1.005]">
-<div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-4">
-<div>
-<div class="flex items-center gap-2 mb-1">
-<span class="font-label-lg text-label-lg text-on-surface">#BM-98231</span>
-<span class="font-body-md text-body-md text-secondary">• May 24, 2024</span>
-</div>
-<div class="inline-flex items-center bg-[#FFF8E1] text-[#A67100] px-3 py-1 rounded-full font-label-sm text-label-sm">
-<span class="w-2 h-2 rounded-full bg-[#FFB300] mr-2 animate-pulse"></span>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary transition-colors font-label-lg text-label-lg"
+                    href="personalizedRecommendation.html">Menu</a>
+                <a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary transition-colors font-label-lg text-label-lg"
+                    href="order.html">Orders</a>
+                <a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary transition-colors font-label-lg text-label-lg"
+                    href="shoppingCart.html">Bag</a>
+                <a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-1 font-label-lg text-label-lg"
+                    href="0rderHistory.html">Profile</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <span
+                    class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer transition-all duration-200">search</span>
+                <span
+                    class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer transition-all duration-200"><a
+                        href="shoppingCart.html">shopping_bag</a></span>
+            </div>
+        </div>
+    </header>
+    <main class="flex-grow max-w-7xl mx-auto w-full px-margin-mobile py-stack-md md:py-stack-lg">
+        <div class="flex flex-col md:grid md:grid-cols-12 gap-8">
+            <!-- Sidebar Navigation -->
+            <aside class="md:col-span-3 space-y-6">
+                <!-- Profile Summary (Mobile & Desktop) -->
+                <div
+                    class="bg-surface-container-lowest p-6 rounded-lg shadow-[0_4px_20px_rgba(176,47,0,0.04)] flex flex-col items-center md:items-start text-center md:text-left">
+                    <div
+                        class="w-20 h-20 bg-primary-fixed rounded-full flex items-center justify-center mb-4 border-2 border-surface-variant overflow-hidden">
+                        <img class="w-full h-full object-cover"
+                            data-alt="A professional studio portrait of a friendly young man with short dark hair and a modern look, set against a clean, warm-toned minimalist background. The lighting is soft and even, emphasizing a high-end, premium aesthetic. The color palette is composed of soft beige and ivory tones with subtle warm highlights, creating a welcoming and sophisticated digital profile image."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAASHh73R1S82SV3ChjnEsbmokar3KjBVtqyN3b0kzjkMzz6RhN8oja6LMuHBFc9ui_duzpBRnvxemQShDm5PsZliweabSVaUi8em7EUrBUKUg6dWnAcMZBG1UyX0nWc8FXo-rXhAbAyxkjr_OugXKjVSOhJK3Krzaqyn8QWDe6TVnAu7vcCoFUql37CMRgFwj7o2TSUutk8LXnnn4FR7pxq6mskiR_hWxb52elyCCM_R_7EWIXHfne8i_O_RLzHIccVGblo7c3r1ir">
+                    </div>
+                    <h2 class="font-headline-md text-headline-md text-on-surface">Alex Johnson</h2>
+                    <p class="font-body-md text-body-md text-secondary mb-2">alex.j@example.com</p>
+                    <div class="inline-flex items-center bg-surface-container-high px-3 py-1 rounded-full">
+                        <span class="material-symbols-outlined text-sm mr-1"
+                            style="font-variation-settings: 'FILL' 1;">stars</span>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">Member since 2023</span>
+                    </div>
+                </div>
+                <!-- Nav Links -->
+                <nav
+                    class="bg-surface-container-lowest rounded-lg shadow-[0_4px_20px_rgba(176,47,0,0.04)] overflow-hidden">
+                    <ul class="divide-y divide-surface-variant">
+                        <li>
+                            <a class="flex items-center gap-3 p-4 bg-primary-fixed text-primary font-bold transition-all"
+                                href="#">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">history</span>
+                                <span class="font-label-lg text-label-lg"><a href="0rderHistory.html">Order
+                                        History</a></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="flex items-center gap-3 p-4 text-secondary hover:bg-surface-container-high transition-all"
+                                href="#">
+                                <span class="material-symbols-outlined">payments</span>
+                                <span class="font-label-lg text-label-lg"><a href="paymentMethod.html">Payment
+                                        Methods</a></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="flex items-center gap-3 p-4 text-secondary hover:bg-surface-container-high transition-all"
+                                href="#">
+                                <span class="material-symbols-outlined">location_on</span>
+                                <span class="font-label-lg text-label-lg"><a href="saveAddress.html">Saved
+                                        Addresses</a></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="flex items-center gap-3 p-4 text-secondary hover:bg-surface-container-high transition-all"
+                                href="#">
+                                <span class="material-symbols-outlined">settings</span>
+                                <span class="font-label-lg text-label-lg"><a href="saveAddress.html">Settings</a></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <!-- Main Content Area -->
+            <section class="md:col-span-9">
+                <div class="flex items-center justify-between mb-stack-md">
+                    <h1
+                        class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+                        Order History</h1>
+                    <div class="flex gap-2">
+                        <button
+                            class="bg-surface-container-high p-2 rounded-lg hover:bg-surface-variant transition-colors">
+                            <span class="material-symbols-outlined text-on-surface-variant">filter_list</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="space-y-gutter">
+                    <!-- Order Card 1: In Progress -->
+                    <div
+                        class="bg-surface-container-lowest p-6 rounded-lg shadow-[0_4px_20px_rgba(176,47,0,0.04)] border-l-4 border-primary transition-transform hover:scale-[1.005]">
+                        <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="font-label-lg text-label-lg text-on-surface">#BM-98231</span>
+                                    <span class="font-body-md text-body-md text-secondary">• May 24, 2024</span>
+                                </div>
+                                <div
+                                    class="inline-flex items-center bg-[#FFF8E1] text-[#A67100] px-3 py-1 rounded-full font-label-sm text-label-sm">
+                                    <span class="w-2 h-2 rounded-full bg-[#FFB300] mr-2 animate-pulse"></span>
                                     In Progress
                                 </div>
-</div>
-<div class="text-right">
-<p class="font-headline-md text-headline-md text-on-surface">$32.40</p>
-</div>
-</div>
-<div class="flex items-center gap-4 py-4 border-y border-surface-variant">
-<div class="flex -space-x-4 overflow-hidden">
-<img class="inline-block h-12 w-12 rounded-lg ring-2 ring-surface object-cover" data-alt="A juicy, premium double cheeseburger with melting cheddar, fresh lettuce, and ripe tomatoes on a toasted brioche bun. The lighting is warm and directional, emphasizing the texture of the seared beef and the glossy bun. The background is a soft, out-of-focus modern restaurant setting, creating a high-end food photography aesthetic with a focus on appetite appeal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMJN3QnuSQLeQ9RCtnLMLW1OQHkKrwQ-HFlVkwf_QBLqUW4rAPAiVUUSdsxMfeN43O3r4nNIdYVD-EP1GNzp0G4GjNLOkRZ_zNiDkatIrqocfiLzFBWvnMjBXOCD8azXddI1PZ8CgoxYNgsbqf8klw0pt6HcYW1QjFKLQaegLUGLm1pRmOZdKMXGUBwYdYS8GOokgrPw76rXfXAERDd7lr_agP4Y5DLYhxMWFGYAbS5XGm9iBIjjuETEP50Hec5ivflVqWXfrzJo0H">
-<img class="inline-block h-12 w-12 rounded-lg ring-2 ring-surface object-cover" data-alt="Crispy golden-brown french fries seasoned with sea salt and fresh herbs, served in a minimalist white container. The photography uses high-key, soft lighting to highlight the crispy texture and warm amber tones. The background is clean and uncluttered, maintaining a premium minimalist fast-food brand identity focused on quality ingredients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4JIIwayXM3NWfynR_Vm43tMOYR0Q83YCCsmYeJXK0No_kcQLOHnb3epT1GGogUHM5u0oMjVbTEFizpQuyEQLLX5BbNoX57R0baLiU21yCariR3M_wRTb6z8UoBL2hN3UhqSFm6lPeSqp74PZPwuy94r-OHcsERf_avG0zduEX7Y8ZQ8SX-D8zes4SAWXY1CmOm2dVEMY8RKJab7IQUZaWJF3sKCCu4KJKfPvnlVJ063bEa7mGB-4yBE_n7EmsQYudfsImoYVL5ISa">
-</div>
-<p class="font-body-md text-body-md text-secondary">The Classic Smash x2, Large Fries, Lemonade</p>
-</div>
-<div class="flex gap-4 mt-4">
-<button class="flex-1 bg-primary text-white font-label-lg text-label-lg py-3 px-6 rounded-full hover:opacity-90 active:scale-95 transition-all shadow-md">Reorder</button>
-<button class="flex-1 bg-surface-container-high text-on-surface font-label-lg text-label-lg py-3 px-6 rounded-full hover:bg-surface-variant transition-all">View Receipt</button>
-</div>
-</div>
-<!-- Order Card 2: Delivered -->
-<div class="bg-surface-container-lowest p-6 rounded-lg shadow-[0_4px_20px_rgba(176,47,0,0.04)] border-l-4 border-emerald-500 transition-transform hover:scale-[1.005]">
-<div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-4">
-<div>
-<div class="flex items-center gap-2 mb-1">
-<span class="font-label-lg text-label-lg text-on-surface">#BM-97102</span>
-<span class="font-body-md text-body-md text-secondary">• May 18, 2024</span>
-</div>
-<div class="inline-flex items-center bg-[#E8F5E9] text-[#2E7D32] px-3 py-1 rounded-full font-label-sm text-label-sm">
-<span class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></span>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-headline-md text-headline-md text-on-surface">$32.40</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 py-4 border-y border-surface-variant">
+                            <div class="flex -space-x-4 overflow-hidden">
+                                <img class="inline-block h-12 w-12 rounded-lg ring-2 ring-surface object-cover"
+                                    data-alt="A juicy, premium double cheeseburger with melting cheddar, fresh lettuce, and ripe tomatoes on a toasted brioche bun. The lighting is warm and directional, emphasizing the texture of the seared beef and the glossy bun. The background is a soft, out-of-focus modern restaurant setting, creating a high-end food photography aesthetic with a focus on appetite appeal."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMJN3QnuSQLeQ9RCtnLMLW1OQHkKrwQ-HFlVkwf_QBLqUW4rAPAiVUUSdsxMfeN43O3r4nNIdYVD-EP1GNzp0G4GjNLOkRZ_zNiDkatIrqocfiLzFBWvnMjBXOCD8azXddI1PZ8CgoxYNgsbqf8klw0pt6HcYW1QjFKLQaegLUGLm1pRmOZdKMXGUBwYdYS8GOokgrPw76rXfXAERDd7lr_agP4Y5DLYhxMWFGYAbS5XGm9iBIjjuETEP50Hec5ivflVqWXfrzJo0H">
+                                <img class="inline-block h-12 w-12 rounded-lg ring-2 ring-surface object-cover"
+                                    data-alt="Crispy golden-brown french fries seasoned with sea salt and fresh herbs, served in a minimalist white container. The photography uses high-key, soft lighting to highlight the crispy texture and warm amber tones. The background is clean and uncluttered, maintaining a premium minimalist fast-food brand identity focused on quality ingredients."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4JIIwayXM3NWfynR_Vm43tMOYR0Q83YCCsmYeJXK0No_kcQLOHnb3epT1GGogUHM5u0oMjVbTEFizpQuyEQLLX5BbNoX57R0baLiU21yCariR3M_wRTb6z8UoBL2hN3UhqSFm6lPeSqp74PZPwuy94r-OHcsERf_avG0zduEX7Y8ZQ8SX-D8zes4SAWXY1CmOm2dVEMY8RKJab7IQUZaWJF3sKCCu4KJKfPvnlVJ063bEa7mGB-4yBE_n7EmsQYudfsImoYVL5ISa">
+                            </div>
+                            <p class="font-body-md text-body-md text-secondary">The Classic Smash x2, Large Fries,
+                                Lemonade</p>
+                        </div>
+                        <div class="flex gap-4 mt-4">
+                            <button
+                                class="flex-1 bg-primary text-white font-label-lg text-label-lg py-3 px-6 rounded-full hover:opacity-90 active:scale-95 transition-all shadow-md">Reorder</button>
+                            <button
+                                class="flex-1 bg-surface-container-high text-on-surface font-label-lg text-label-lg py-3 px-6 rounded-full hover:bg-surface-variant transition-all">View
+                                Receipt</button>
+                        </div>
+                    </div>
+                    <!-- Order Card 2: Delivered -->
+                    <div
+                        class="bg-surface-container-lowest p-6 rounded-lg shadow-[0_4px_20px_rgba(176,47,0,0.04)] border-l-4 border-emerald-500 transition-transform hover:scale-[1.005]">
+                        <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="font-label-lg text-label-lg text-on-surface">#BM-97102</span>
+                                    <span class="font-body-md text-body-md text-secondary">• May 18, 2024</span>
+                                </div>
+                                <div
+                                    class="inline-flex items-center bg-[#E8F5E9] text-[#2E7D32] px-3 py-1 rounded-full font-label-sm text-label-sm">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></span>
                                     Delivered
                                 </div>
-</div>
-<div class="text-right">
-<p class="font-headline-md text-headline-md text-on-surface">$18.90</p>
-</div>
-</div>
-<div class="flex items-center gap-4 py-4 border-y border-surface-variant">
-<img class="h-12 w-12 rounded-lg object-cover" data-alt="A gourmet spicy chicken sandwich featuring a crispy buttermilk fried chicken breast, tangy coleslaw, and spicy aioli on a toasted bun. The image captures a detailed close-up with sharp focus and vibrant colors. The lighting is bright and modern, set against a neutral, minimalist background that highlights the premium quality and freshness of the sandwich." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa39k4pR1KQBk5rS96yMqnOVFdW7No5rBH-FgAOg8ZI0e00zVjb1-bqXXPdiRJFrTiJflR4GFmESSQz-tVe_gImgDWvyaFk7xH2n7ICRldYfeHF7iUP8P9Hmka03NbaiBfmfKptli2XKetYqI4Ruzhs5FhELGIC3jP9uQin3EmV9LLGhAJP8uq0VrPSqCAx1qXbnOrfOH1Ab2SfulrLVUr6pcovxX7UG8VIWsX8-vO1tiJ8HZTYZaSdLNWuMJ-S208o7ZS0td9GdK6">
-<p class="font-body-md text-body-md text-secondary">Spicy Birdie x1, Sweet Potato Fries</p>
-</div>
-<div class="flex gap-4 mt-4">
-<button class="flex-1 bg-primary text-white font-label-lg text-label-lg py-3 px-6 rounded-full hover:opacity-90 active:scale-95 transition-all shadow-md">Reorder</button>
-<button class="flex-1 bg-surface-container-high text-on-surface font-label-lg text-label-lg py-3 px-6 rounded-full hover:bg-surface-variant transition-all">View Receipt</button>
-</div>
-</div>
-<!-- Order Card 3: Delivered -->
-<div class="bg-surface-container-lowest p-6 rounded-lg shadow-[0_4px_20px_rgba(176,47,0,0.04)] border-l-4 border-emerald-500 transition-transform hover:scale-[1.005]">
-<div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-4">
-<div>
-<div class="flex items-center gap-2 mb-1">
-<span class="font-label-lg text-label-lg text-on-surface">#BM-96548</span>
-<span class="font-body-md text-body-md text-secondary">• May 12, 2024</span>
-</div>
-<div class="inline-flex items-center bg-[#E8F5E9] text-[#2E7D32] px-3 py-1 rounded-full font-label-sm text-label-sm">
-<span class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></span>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-headline-md text-headline-md text-on-surface">$18.90</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 py-4 border-y border-surface-variant">
+                            <img class="h-12 w-12 rounded-lg object-cover"
+                                data-alt="A gourmet spicy chicken sandwich featuring a crispy buttermilk fried chicken breast, tangy coleslaw, and spicy aioli on a toasted bun. The image captures a detailed close-up with sharp focus and vibrant colors. The lighting is bright and modern, set against a neutral, minimalist background that highlights the premium quality and freshness of the sandwich."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa39k4pR1KQBk5rS96yMqnOVFdW7No5rBH-FgAOg8ZI0e00zVjb1-bqXXPdiRJFrTiJflR4GFmESSQz-tVe_gImgDWvyaFk7xH2n7ICRldYfeHF7iUP8P9Hmka03NbaiBfmfKptli2XKetYqI4Ruzhs5FhELGIC3jP9uQin3EmV9LLGhAJP8uq0VrPSqCAx1qXbnOrfOH1Ab2SfulrLVUr6pcovxX7UG8VIWsX8-vO1tiJ8HZTYZaSdLNWuMJ-S208o7ZS0td9GdK6">
+                            <p class="font-body-md text-body-md text-secondary">Spicy Birdie x1, Sweet Potato Fries</p>
+                        </div>
+                        <div class="flex gap-4 mt-4">
+                            <button
+                                class="flex-1 bg-primary text-white font-label-lg text-label-lg py-3 px-6 rounded-full hover:opacity-90 active:scale-95 transition-all shadow-md">Reorder</button>
+                            <button
+                                class="flex-1 bg-surface-container-high text-on-surface font-label-lg text-label-lg py-3 px-6 rounded-full hover:bg-surface-variant transition-all">View
+                                Receipt</button>
+                        </div>
+                    </div>
+                    <!-- Order Card 3: Delivered -->
+                    <div
+                        class="bg-surface-container-lowest p-6 rounded-lg shadow-[0_4px_20px_rgba(176,47,0,0.04)] border-l-4 border-emerald-500 transition-transform hover:scale-[1.005]">
+                        <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="font-label-lg text-label-lg text-on-surface">#BM-96548</span>
+                                    <span class="font-body-md text-body-md text-secondary">• May 12, 2024</span>
+                                </div>
+                                <div
+                                    class="inline-flex items-center bg-[#E8F5E9] text-[#2E7D32] px-3 py-1 rounded-full font-label-sm text-label-sm">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></span>
                                     Delivered
                                 </div>
-</div>
-<div class="text-right">
-<p class="font-headline-md text-headline-md text-on-surface">$45.00</p>
-</div>
-</div>
-<div class="flex items-center gap-4 py-4 border-y border-surface-variant">
-<div class="flex -space-x-4 overflow-hidden">
-<img class="inline-block h-12 w-12 rounded-lg ring-2 ring-surface object-cover" data-alt="Close up of a classic smash burger with perfectly caramelized edges, melted cheese dripping down the sides, and vibrant green lettuce. The lighting is professional studio quality with soft shadows, emphasizing the appetizing textures and warm tones of the fresh burger ingredients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChM-ePJaUrQekoQqY7kwWY7dbjJ-MuYYtD6TaqT9WVVvti4IRfCiOUXpAtLUgbUFf-PBlZG4myX9V68_1d8c-x9yCGeUTV8d6GPafs6tXcJKuEySkSsTbkBkzWCqfp9dF7p8-6sE8p0ZZoO3qrXQsZbHjuv0hp2LJrVhd5139XIteXUdyt9cZabr3jF_vVyAnM9Ty7ZSDonfjcjPKXcOwER-bBTgyBiSbIO-RhvBYHNsOrjGnKpvjQP7ZOXZxjGNg9Do-otkVz2XEL">
-<img class="inline-block h-12 w-12 rounded-lg ring-2 ring-surface object-cover" data-alt="A delicious veggie burger made with a thick portobello mushroom cap, topped with fresh avocado slices and sprouts on a whole grain bun. The photography style is light, airy, and clean, highlighting the fresh and healthy nature of the ingredients in a high-end minimalist setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-Ddhc6p33LVYz7KkqjvJzPC7C4ex9mX_qtKTXYkRBB3Xuk_9j29_KIOPIZJVQNN7E7C2FaKn8yoRviIHQoOaJlmLm2t4flr063CUftTTNKgn0ayoud1w0_PCyD_WSghbjBe94GjjbCLCIsCwCU6OT-NrW1gZd3MtRFEXKwaEExHRgvwCQY62-S5xPNkjUUCq4jgHVli5eZnisurt0VMUMvNiHy6DucWyJLpVbIMxkedm-43665nQeAoOFV3OYslwiKvxVcr7MLqQB">
-</div>
-<p class="font-body-md text-body-md text-secondary">Family Bundle: 4 Burgers, 2 Large Fries, 4 Drinks</p>
-</div>
-<div class="flex gap-4 mt-4">
-<button class="flex-1 bg-primary text-white font-label-lg text-label-lg py-3 px-6 rounded-full hover:opacity-90 active:scale-95 transition-all shadow-md">Reorder</button>
-<button class="flex-1 bg-surface-container-high text-on-surface font-label-lg text-label-lg py-3 px-6 rounded-full hover:bg-surface-variant transition-all">View Receipt</button>
-</div>
-</div>
-</div>
-<!-- Load More Button -->
-<div class="mt-8 text-center">
-<button class="text-primary font-label-lg text-label-lg hover:underline underline-offset-4 flex items-center justify-center mx-auto gap-2">
+                            </div>
+                            <div class="text-right">
+                                <p class="font-headline-md text-headline-md text-on-surface">$45.00</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 py-4 border-y border-surface-variant">
+                            <div class="flex -space-x-4 overflow-hidden">
+                                <img class="inline-block h-12 w-12 rounded-lg ring-2 ring-surface object-cover"
+                                    data-alt="Close up of a classic smash burger with perfectly caramelized edges, melted cheese dripping down the sides, and vibrant green lettuce. The lighting is professional studio quality with soft shadows, emphasizing the appetizing textures and warm tones of the fresh burger ingredients."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuChM-ePJaUrQekoQqY7kwWY7dbjJ-MuYYtD6TaqT9WVVvti4IRfCiOUXpAtLUgbUFf-PBlZG4myX9V68_1d8c-x9yCGeUTV8d6GPafs6tXcJKuEySkSsTbkBkzWCqfp9dF7p8-6sE8p0ZZoO3qrXQsZbHjuv0hp2LJrVhd5139XIteXUdyt9cZabr3jF_vVyAnM9Ty7ZSDonfjcjPKXcOwER-bBTgyBiSbIO-RhvBYHNsOrjGnKpvjQP7ZOXZxjGNg9Do-otkVz2XEL">
+                                <img class="inline-block h-12 w-12 rounded-lg ring-2 ring-surface object-cover"
+                                    data-alt="A delicious veggie burger made with a thick portobello mushroom cap, topped with fresh avocado slices and sprouts on a whole grain bun. The photography style is light, airy, and clean, highlighting the fresh and healthy nature of the ingredients in a high-end minimalist setting."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-Ddhc6p33LVYz7KkqjvJzPC7C4ex9mX_qtKTXYkRBB3Xuk_9j29_KIOPIZJVQNN7E7C2FaKn8yoRviIHQoOaJlmLm2t4flr063CUftTTNKgn0ayoud1w0_PCyD_WSghbjBe94GjjbCLCIsCwCU6OT-NrW1gZd3MtRFEXKwaEExHRgvwCQY62-S5xPNkjUUCq4jgHVli5eZnisurt0VMUMvNiHy6DucWyJLpVbIMxkedm-43665nQeAoOFV3OYslwiKvxVcr7MLqQB">
+                            </div>
+                            <p class="font-body-md text-body-md text-secondary">Family Bundle: 4 Burgers, 2 Large Fries,
+                                4 Drinks</p>
+                        </div>
+                        <div class="flex gap-4 mt-4">
+                            <button
+                                class="flex-1 bg-primary text-white font-label-lg text-label-lg py-3 px-6 rounded-full hover:opacity-90 active:scale-95 transition-all shadow-md">Reorder</button>
+                            <button
+                                class="flex-1 bg-surface-container-high text-on-surface font-label-lg text-label-lg py-3 px-6 rounded-full hover:bg-surface-variant transition-all">View
+                                Receipt</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Load More Button -->
+                <div class="mt-8 text-center">
+                    <button
+                        class="text-primary font-label-lg text-label-lg hover:underline underline-offset-4 flex items-center justify-center mx-auto gap-2">
                         View older orders
                         <span class="material-symbols-outlined">expand_more</span>
-</button>
-</div>
-</section>
-</div>
-</main>
-<!-- Footer -->
-<footer class="bg-surface-container-low dark:bg-surface-container-lowest border-t border-surface-variant mt-stack-lg">
-<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile py-stack-md max-w-7xl mx-auto w-full gap-8">
-<div class="flex flex-col items-center md:items-start">
-<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim mb-2">BiteModern</div>
-<p class="font-body-md text-body-md text-secondary text-center md:text-left">© 2024 BiteModern. High-end fast-food reimagined.</p>
-</div>
-<div class="flex flex-wrap justify-center gap-6">
-<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors focus:underline underline-offset-4" href="#">Support</a>
-<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors focus:underline underline-offset-4" href="#">Privacy Policy</a>
-<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors focus:underline underline-offset-4" href="#">Terms of Service</a>
-<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors focus:underline underline-offset-4" href="#">Locations</a>
-<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors focus:underline underline-offset-4" href="#">Careers</a>
-</div>
-</div>
-</footer>
-<!-- FAB for Support (Contextual for profile area) -->
-<button class="fixed bottom-6 right-6 bg-primary text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40 md:hidden">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
-</button>
-<script>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="bg-surface-container-low dark:bg-surface-container-lowest border-t border-surface-variant mt-stack-lg">
+        <div
+            class="flex flex-col md:flex-row justify-between items-center px-margin-mobile py-stack-md max-w-7xl mx-auto w-full gap-8">
+            <div class="flex flex-col items-center md:items-start">
+                <div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim mb-2">
+                    BiteModern</div>
+                <p class="font-body-md text-body-md text-secondary text-center md:text-left">© 2024 BiteModern. High-end
+                    fast-food reimagined.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors focus:underline underline-offset-4"
+                    href="supportCenter.html">Support</a>
+                <a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors focus:underline underline-offset-4"
+                    href="#">Privacy Policy</a>
+                <a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors focus:underline underline-offset-4"
+                    href="#">Terms of Service</a>
+                <a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors focus:underline underline-offset-4"
+                    href="storeLocation.html">Locations</a>
+                <a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors focus:underline underline-offset-4"
+                    href="career.html">Careers</a>
+            </div>
+        </div>
+    </footer>
+    <!-- FAB for Support (Contextual for profile area) -->
+    <button
+        class="fixed bottom-6 right-6 bg-primary text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40 md:hidden">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+    </button>
+    <script>
         // Micro-interaction for buttons
         document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('mousedown', function() {
+            button.addEventListener('mousedown', function () {
                 this.style.transform = 'scale(0.96)';
             });
-            button.addEventListener('mouseup', function() {
+            button.addEventListener('mouseup', function () {
                 this.style.transform = '';
             });
-            button.addEventListener('mouseleave', function() {
+            button.addEventListener('mouseleave', function () {
                 this.style.transform = '';
             });
         });
@@ -331,4 +404,6 @@
             observer.observe(card);
         });
     </script>
-</body></html>
+</body>
+
+</html>
